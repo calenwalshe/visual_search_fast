@@ -3,16 +3,17 @@
  * course requirements at degree granting institutions only.  Not for
  * government, commercial, or other organizational use.
  *
- * covert_search_dp.h
+ * fread.h
  *
- * Code generation for function 'covert_search_dp'
+ * Code generation for function 'fread'
  *
  */
 
-#ifndef COVERT_SEARCH_DP_H
-#define COVERT_SEARCH_DP_H
+#ifndef FREAD_H
+#define FREAD_H
 
 /* Include files */
+#include "covert_search_dp_types.h"
 #include "rtwtypes.h"
 #include <stddef.h>
 #include <stdlib.h>
@@ -23,8 +24,8 @@ extern "C" {
 #endif
 
   /* Function Declarations */
-  extern double covert_search_dp(double trials, const double priorh[5760000],
-    const double dpmap[5760000], const double rtmp[18225], double seed_val);
+  void b_fread(double fileID, emxArray_real_T *A);
+  void c_fread(double fileID, emxArray_real_T *A);
 
 #ifdef __cplusplus
 
@@ -32,4 +33,4 @@ extern "C" {
 #endif
 #endif
 
-/* End of code generation (covert_search_dp.h) */
+/* End of code generation (fread.h) */

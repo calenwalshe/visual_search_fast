@@ -3,28 +3,25 @@
  * course requirements at degree granting institutions only.  Not for
  * government, commercial, or other organizational use.
  *
- * covert_search_dp.h
+ * rtGetNaN.h
  *
  * Code generation for function 'covert_search_dp'
  *
  */
 
-#ifndef COVERT_SEARCH_DP_H
-#define COVERT_SEARCH_DP_H
+#ifndef RTGETNAN_H
+#define RTGETNAN_H
 
 /* Include files */
 #include "rtwtypes.h"
-#include <stddef.h>
-#include <stdlib.h>
 #ifdef __cplusplus
 
 extern "C" {
 
 #endif
 
-  /* Function Declarations */
-  extern double covert_search_dp(double trials, const double priorh[5760000],
-    const double dpmap[5760000], const double rtmp[18225], double seed_val);
+  extern real_T rtGetNaN(void);
+  extern real32_T rtGetNaNF(void);
 
 #ifdef __cplusplus
 
@@ -32,4 +29,4 @@ extern "C" {
 #endif
 #endif
 
-/* End of code generation (covert_search_dp.h) */
+/* End of code generation (rtGetNaN.h) */

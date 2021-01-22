@@ -15,28 +15,36 @@
 #include "covert_search_dp_emxutil.h"
 #include "covert_search_dp_initialize.h"
 #include "covert_search_dp_types.h"
-#include "rand.h"
+#include "fileManager.h"
+#include "fread.h"
 #include "randn.h"
+#include "randperm.h"
 #include "randsample.h"
+#include "rt_nonfinite.h"
 #include "tic.h"
 #include "toc.h"
-#include <math.h>
 
 /* Function Definitions */
-double covert_search_dp(double trials, const double priorh[5760000], const
-  double dpmap[5760000], const double rtmp[18225], double seed_val)
+double covert_search_dp(double trials, const double priorhfn[5760000], const
+  double dpmapfn[5760000], const double rtmpfn[18225], double seed_val)
 {
-  static double unusedExpr[360000];
-  emxArray_int8_T *tpaMat;
-  emxArray_real_T *b_tpaMat;
-  emxArray_real_T *b_trials;
+  static double c_unusedExpr[360000];
+  emxArray_real_T b_priorh;
+  emxArray_real_T *b_fileid;
+  emxArray_real_T *fileid;
+  emxArray_real_T *priorh;
+  double b_unusedExpr[2400];
+  double unusedExpr[2400];
   double results;
-  double x_tmp;
-  int i;
+  int c_priorh[1];
   int mti;
-  unsigned int seed;
-  (void)dpmap;
-  (void)rtmp;
+  unsigned int r;
+  signed char c_fileid;
+  (void)trials;
+  (void)priorhfn;
+  (void)dpmapfn;
+  (void)rtmpfn;
+  (void)seed_val;
   if (!isInitialized_covert_search_dp) {
     covert_search_dp_initialize();
   }
@@ -55,67 +63,47 @@ double covert_search_dp(double trials, const double priorh[5760000], const
   /*  note that (i,j) = (y,x) */
   /*  note:  xcorr2 = conv2(a, rot90(conj(b),2));  can add 'same' to this */
   tic();
-  if (seed_val < 4.294967296E+9) {
-    if (seed_val >= 0.0) {
-      seed = (unsigned int)seed_val;
-    } else {
-      seed = 0U;
-    }
-  } else if (seed_val >= 4.294967296E+9) {
-    seed = MAX_uint32_T;
-  } else {
-    seed = 0U;
-  }
-
-  if (seed == 0U) {
-    seed = 5489U;
-  }
-
-  state[0] = seed;
+  r = 1U;
+  state[0] = 1U;
   for (mti = 0; mti < 623; mti++) {
-    seed = ((seed ^ seed >> 30U) * 1812433253U + mti) + 1U;
-    state[mti + 1] = seed;
+    r = ((r ^ r >> 30U) * 1812433253U + mti) + 1U;
+    state[mti + 1] = r;
   }
 
-  emxInit_int8_T(&tpaMat, 1);
+  emxInit_real_T(&priorh, 2);
+  emxInit_real_T(&fileid, 2);
+  emxInit_real_T(&b_fileid, 2);
   state[624] = 624U;
+  c_fileid = cfopen("dpmap.bin", "rb");
+  b_fread(c_fileid, fileid);
+  c_fileid = cfopen("priorh.bin", "rb");
+  b_fread(c_fileid, priorh);
+  c_fileid = cfopen("rtmp.bin", "rb");
+  c_fread(c_fileid, b_fileid);
 
   /*  Setup some generic parameters */
   /*  Fixed parameters */
   /*  */
   /*  Create effective prior */
-  x_tmp = floor(trials / 2.0);
-  i = tpaMat->size[0];
-  tpaMat->size[0] = (int)x_tmp + (int)x_tmp;
-  emxEnsureCapacity_int8_T(tpaMat, i);
-  mti = (int)x_tmp;
-  for (i = 0; i < mti; i++) {
-    tpaMat->data[i] = 0;
-  }
-
-  mti = (int)x_tmp;
-  for (i = 0; i < mti; i++) {
-    tpaMat->data[i + (int)x_tmp] = 1;
-  }
-
-  emxInit_real_T(&b_tpaMat, 2);
-  emxInit_real_T(&b_trials, 1);
-
   /*  1 for target present, 0 for absent. */
-  b_rand(tpaMat->size[0], b_tpaMat);
+  randperm(unusedExpr);
 
   /*  permute isn't necessary becuase this search with no memory. we permute anyway. */
   /*  integer pixel locations */
-  randsample(trials, priorh, b_trials);
+  mti = priorh->size[0] * priorh->size[1];
+  b_priorh = *priorh;
+  c_priorh[0] = mti;
+  b_priorh.size = &c_priorh[0];
+  b_priorh.numDimensions = 1;
+  randsample(priorh->size[0] * priorh->size[1], &b_priorh, b_unusedExpr);
 
   /*  Run simulation loop */
-  i = (int)trials;
-  emxFree_real_T(&b_trials);
-  emxFree_real_T(&b_tpaMat);
-  emxFree_int8_T(&tpaMat);
-  for (mti = 0; mti < i; mti++) {
+  emxFree_real_T(&b_fileid);
+  emxFree_real_T(&fileid);
+  emxFree_real_T(&priorh);
+  for (mti = 0; mti < 2400; mti++) {
     /*  background number */
-    randn(unusedExpr);
+    randn(c_unusedExpr);
 
     /*  human experiments have 30 independent pix per degree. upsample via nearest neighbor to run simulations in 120 pix per degree. */
     /*  sneaky way to increase the matrix with blocks - Kronecker product */

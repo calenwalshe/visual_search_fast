@@ -38,6 +38,7 @@
 #include "main.h"
 #include "covert_search_dp.h"
 #include "covert_search_dp_terminate.h"
+#include "rt_nonfinite.h"
 
 /* Function Declarations */
 static void argInit_135x135_real_T(double result[18225]);
@@ -83,21 +84,21 @@ static double argInit_real_T(void)
 
 static void main_covert_search_dp(void)
 {
-  static double priorh_tmp[5760000];
-  double dv[18225];
+  static double priorhfn_tmp[5760000];
+  static double dv[18225];
   double trials_tmp;
 
   /* Initialize function 'covert_search_dp' input arguments. */
   trials_tmp = argInit_real_T();
 
-  /* Initialize function input argument 'priorh'. */
-  argInit_2400x2400_real_T(priorh_tmp);
+  /* Initialize function input argument 'priorhfn'. */
+  argInit_2400x2400_real_T(priorhfn_tmp);
 
-  /* Initialize function input argument 'dpmap'. */
-  /* Initialize function input argument 'rtmp'. */
+  /* Initialize function input argument 'dpmapfn'. */
+  /* Initialize function input argument 'rtmpfn'. */
   /* Call the entry-point 'covert_search_dp'. */
   argInit_135x135_real_T(dv);
-  trials_tmp = covert_search_dp(trials_tmp, priorh_tmp, priorh_tmp, dv,
+  trials_tmp = covert_search_dp(trials_tmp, priorhfn_tmp, priorhfn_tmp, dv,
     trials_tmp);
 }
 

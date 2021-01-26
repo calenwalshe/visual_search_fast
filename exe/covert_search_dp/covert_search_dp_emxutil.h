@@ -24,8 +24,11 @@ extern "C" {
 #endif
 
   /* Function Declarations */
+  extern void emxEnsureCapacity_int8_T(emxArray_int8_T *emxArray, int oldNumel);
   extern void emxEnsureCapacity_real_T(emxArray_real_T *emxArray, int oldNumel);
+  extern void emxFree_int8_T(emxArray_int8_T **pEmxArray);
   extern void emxFree_real_T(emxArray_real_T **pEmxArray);
+  extern void emxInit_int8_T(emxArray_int8_T **pEmxArray, int numDimensions);
   extern void emxInit_real_T(emxArray_real_T **pEmxArray, int numDimensions);
 
 #ifdef __cplusplus

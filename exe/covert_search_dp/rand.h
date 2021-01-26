@@ -13,6 +13,7 @@
 #define RAND_H
 
 /* Include files */
+#include "covert_search_dp_types.h"
 #include "rtwtypes.h"
 #include <stddef.h>
 #include <stdlib.h>
@@ -23,7 +24,8 @@ extern "C" {
 #endif
 
   /* Function Declarations */
-  void b_rand(double r[2400]);
+  void b_rand(double varargin_2, emxArray_real_T *r);
+  void c_rand(int varargin_1, emxArray_real_T *r);
 
 #ifdef __cplusplus
 

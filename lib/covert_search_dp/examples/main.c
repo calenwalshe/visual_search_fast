@@ -40,40 +40,40 @@
 #include "covert_search_dp_terminate.h"
 
 /* Function Declarations */
-static void argInit_135x135_real_T(double result[18225]);
-static void argInit_2400x2400_real_T(double result[5760000]);
+static void argInit_1x10_char_T(char result[10]);
+static void argInit_1x9_char_T(char result[9]);
+static char argInit_char_T(void);
 static double argInit_real_T(void);
 static void main_covert_search_dp(void);
 
 /* Function Definitions */
-static void argInit_135x135_real_T(double result[18225])
+static void argInit_1x10_char_T(char result[10])
 {
-  int idx0;
   int idx1;
 
   /* Loop over the array to initialize each element. */
-  for (idx0 = 0; idx0 < 135; idx0++) {
-    for (idx1 = 0; idx1 < 135; idx1++) {
-      /* Set the value of the array element.
-         Change this value to the value that the application requires. */
-      result[idx0 + 135 * idx1] = argInit_real_T();
-    }
+  for (idx1 = 0; idx1 < 10; idx1++) {
+    /* Set the value of the array element.
+       Change this value to the value that the application requires. */
+    result[idx1] = argInit_char_T();
   }
 }
 
-static void argInit_2400x2400_real_T(double result[5760000])
+static void argInit_1x9_char_T(char result[9])
 {
-  int idx0;
   int idx1;
 
   /* Loop over the array to initialize each element. */
-  for (idx0 = 0; idx0 < 2400; idx0++) {
-    for (idx1 = 0; idx1 < 2400; idx1++) {
-      /* Set the value of the array element.
-         Change this value to the value that the application requires. */
-      result[idx0 + 2400 * idx1] = argInit_real_T();
-    }
+  for (idx1 = 0; idx1 < 9; idx1++) {
+    /* Set the value of the array element.
+       Change this value to the value that the application requires. */
+    result[idx1] = argInit_char_T();
   }
+}
+
+static char argInit_char_T(void)
+{
+  return '?';
 }
 
 static double argInit_real_T(void)
@@ -83,22 +83,16 @@ static double argInit_real_T(void)
 
 static void main_covert_search_dp(void)
 {
-  static double priorh_tmp[5760000];
-  double dv[18225];
-  double trials_tmp;
+  char cv1[10];
+  char cv[9];
 
   /* Initialize function 'covert_search_dp' input arguments. */
-  trials_tmp = argInit_real_T();
-
-  /* Initialize function input argument 'priorh'. */
-  argInit_2400x2400_real_T(priorh_tmp);
-
-  /* Initialize function input argument 'dpmap'. */
-  /* Initialize function input argument 'rtmp'. */
+  /* Initialize function input argument 'dpmapfp'. */
+  /* Initialize function input argument 'priorhfp'. */
   /* Call the entry-point 'covert_search_dp'. */
-  argInit_135x135_real_T(dv);
-  trials_tmp = covert_search_dp(trials_tmp, priorh_tmp, priorh_tmp, dv,
-    trials_tmp);
+  argInit_1x9_char_T(cv);
+  argInit_1x10_char_T(cv1);
+  covert_search_dp(argInit_real_T(), cv, cv1);
 }
 
 int main(int argc, const char * const argv[])

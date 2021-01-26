@@ -1,0 +1,62 @@
+# CompilerName=clang
+# Mode=optim
+ninja_required_version = 1.3
+
+# Basic folders
+root = .
+builddir = $root/build/maci64
+matlabdir = /Applications/MATLAB_R2020b.app
+startdir = /Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c
+
+# Toolchain information
+cc = /usr/bin/xcrun -sdk macosx11.1 clang
+cxx = /usr/bin/xcrun -sdk macosx11.1 clang++
+linker = /usr/bin/xcrun -sdk macosx11.1 clang
+linkerxx = /usr/bin/xcrun -sdk macosx11.1 clang++
+
+cflags =  -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c99 -I "$root" -I "$startdir" -I "$root/interface" -I "$matlabdir/extern/include" -I "." -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c 
+
+cxxflags =  -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I "$root" -I "$startdir" -I "$root/interface" -I "$matlabdir/extern/include" -I "." -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c 
+
+ldflags =  -Wl,-twolevel_namespace -undefined error -arch x86_64 -mmacosx-version-min=10.14 -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -framework Cocoa -bundle  -stdlib=libc++ -L"$matlabdir/bin/maci64" -lmx -lmex -lmat -L"$matlabdir/extern/bin/maci64" -lMatlabDataArray -lMatlabEngine  -Wl,-rpath,@loader_path -o covert_search_dp_mex.mexmaci64 -lemlrt -lcovrt -lut -lmwmathutil 
+
+# Build Rules
+rule cc
+    command = $cc $cflags $in -o $out
+
+rule cxx
+    command = $cxx $cxxflags $in -o $out
+
+rule link
+    command = $linker $in $ldflags
+
+rule linkxx
+    command = $linkerxx $in $ldflags
+
+# Build
+build $builddir/covert_search_dp_data.o : cxx $root/covert_search_dp_data.cpp
+build $builddir/rt_nonfinite.o : cxx $root/rt_nonfinite.cpp
+build $builddir/covert_search_dp_initialize.o : cxx $root/covert_search_dp_initialize.cpp
+build $builddir/covert_search_dp_terminate.o : cxx $root/covert_search_dp_terminate.cpp
+build $builddir/covert_search_dp.o : cxx $root/covert_search_dp.cpp
+build $builddir/tic.o : cxx $root/tic.cpp
+build $builddir/timeKeeper.o : cxx $root/timeKeeper.cpp
+build $builddir/fileManager.o : cxx $root/fileManager.cpp
+build $builddir/fread.o : cxx $root/fread.cpp
+build $builddir/eml_int_forloop_overflow_check.o : cxx $root/eml_int_forloop_overflow_check.cpp
+build $builddir/imrotate.o : cxx $root/imrotate.cpp
+build $builddir/randperm.o : cxx $root/randperm.cpp
+build $builddir/rand.o : cxx $root/rand.cpp
+build $builddir/indexShapeCheck.o : cxx $root/indexShapeCheck.cpp
+build $builddir/randsample.o : cxx $root/randsample.cpp
+build $builddir/ind2sub.o : cxx $root/ind2sub.cpp
+build $builddir/randn.o : cxx $root/randn.cpp
+build $builddir/toc.o : cxx $root/toc.cpp
+build $builddir/_coder_covert_search_dp_api.o : cxx $root/interface/_coder_covert_search_dp_api.cpp
+build $builddir/_coder_covert_search_dp_mex.o : cxx $root/interface/_coder_covert_search_dp_mex.cpp
+build $builddir/covert_search_dp_mexutil.o : cxx $root/covert_search_dp_mexutil.cpp
+build $builddir/_coder_covert_search_dp_info.o : cxx $root/interface/_coder_covert_search_dp_info.cpp
+build $builddir/cpp_mexapi_version.o : cxx $matlabdir/extern/version/cpp_mexapi_version.cpp
+
+# Link
+build $root/covert_search_dp_mex.mexmaci64 : linkxx $builddir/covert_search_dp_data.o $builddir/rt_nonfinite.o $builddir/covert_search_dp_initialize.o $builddir/covert_search_dp_terminate.o $builddir/covert_search_dp.o $builddir/tic.o $builddir/timeKeeper.o $builddir/fileManager.o $builddir/fread.o $builddir/eml_int_forloop_overflow_check.o $builddir/imrotate.o $builddir/randperm.o $builddir/rand.o $builddir/indexShapeCheck.o $builddir/randsample.o $builddir/ind2sub.o $builddir/randn.o $builddir/toc.o $builddir/_coder_covert_search_dp_api.o $builddir/_coder_covert_search_dp_mex.o $builddir/covert_search_dp_mexutil.o $builddir/_coder_covert_search_dp_info.o $builddir/cpp_mexapi_version.o 

@@ -23,7 +23,9 @@ extern "C" {
 #endif
 
   /* Function Declarations */
-  signed char cfopen(const char *cfilename, const char *cpermission);
+  signed char b_cfopen(const char cfilename[10], const char *cpermission);
+  signed char c_cfopen(const char *cfilename, const char *cpermission);
+  signed char cfopen(const char cfilename[9], const char *cpermission);
   void filedata_init(void);
 
 #ifdef __cplusplus

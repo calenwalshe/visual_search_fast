@@ -3,30 +3,26 @@
  * course requirements at degree granting institutions only.  Not for
  * government, commercial, or other organizational use.
  *
- * rtGetNaN.h
+ * rtwtypes.h
  *
  * Code generation for function 'covert_search_dp'
  *
  */
 
-#ifndef RTGETNAN_H
-#define RTGETNAN_H
+#pragma once
 
 /* Include files */
-#include "rtwtypes.h"
-#ifdef __cplusplus
+#include "tmwtypes.h"
 
-extern "C" {
-
+/*
+ * TRUE/FALSE definitions
+ */
+#ifndef TRUE
+#define TRUE                           (1U)
 #endif
 
-  extern real_T rtGetNaN(void);
-  extern real32_T rtGetNaNF(void);
-
-#ifdef __cplusplus
-
-}
-#endif
+#ifndef FALSE
+#define FALSE                          (0U)
 #endif
 
-/* End of code generation (rtGetNaN.h) */
+/* End of code generation (rtwtypes.h) */

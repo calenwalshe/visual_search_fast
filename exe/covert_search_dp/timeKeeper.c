@@ -11,7 +11,6 @@
 
 /* Include files */
 #include "timeKeeper.h"
-#include "rt_nonfinite.h"
 #include <time.h>
 
 /* Type Definitions */

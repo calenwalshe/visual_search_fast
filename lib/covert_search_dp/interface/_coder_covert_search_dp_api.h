@@ -28,9 +28,8 @@ extern "C" {
 #endif
 
   /* Function Declarations */
-  real_T covert_search_dp(real_T trials, real_T priorh[5760000], real_T dpmap
-    [5760000], real_T rtmp[18225], real_T seed_val);
-  void covert_search_dp_api(const mxArray * const prhs[5], const mxArray *plhs[1]);
+  void covert_search_dp(real_T trials, char_T dpmapfp[9], char_T priorhfp[10]);
+  void covert_search_dp_api(const mxArray * const prhs[3]);
   void covert_search_dp_atexit(void);
   void covert_search_dp_initialize(void);
   void covert_search_dp_terminate(void);

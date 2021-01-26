@@ -2,7 +2,7 @@
 ## Makefile generated for component 'covert_search_dp'. 
 ## 
 ## Makefile     : covert_search_dp_rtw.mk
-## Generated on : Fri Jan 22 14:46:33 2021
+## Generated on : Mon Jan 25 16:36:50 2021
 ## Final product: ./covert_search_dp.a
 ## Product type : static-library
 ## 
@@ -170,7 +170,7 @@ DEFINES = $(DEFINES_CUSTOM) $(DEFINES_STANDARD)
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/covert_search_dp_data.c $(START_DIR)/covert_search_dp_initialize.c $(START_DIR)/covert_search_dp_terminate.c $(START_DIR)/covert_search_dp.c $(START_DIR)/tic.c $(START_DIR)/timeKeeper.c $(START_DIR)/rand.c $(START_DIR)/randsample.c $(START_DIR)/histc.c $(START_DIR)/randn.c $(START_DIR)/toc.c $(START_DIR)/eml_rand_mt19937ar_stateful.c $(START_DIR)/eml_rand_mt19937ar.c $(START_DIR)/covert_search_dp_emxutil.c
+SRCS = $(START_DIR)/covert_search_dp_data.c $(START_DIR)/covert_search_dp_initialize.c $(START_DIR)/covert_search_dp_terminate.c $(START_DIR)/covert_search_dp.c $(START_DIR)/tic.c $(START_DIR)/timeKeeper.c $(START_DIR)/fileManager.c $(START_DIR)/fread.c $(START_DIR)/rand.c $(START_DIR)/randsample.c $(START_DIR)/histc.c $(START_DIR)/randn.c $(START_DIR)/toc.c $(START_DIR)/eml_rand_mt19937ar_stateful.c $(START_DIR)/eml_rand_mt19937ar.c $(START_DIR)/covert_search_dp_emxutil.c
 
 ALL_SRCS = $(SRCS)
 
@@ -178,7 +178,7 @@ ALL_SRCS = $(SRCS)
 ## OBJECTS
 ###########################################################################
 
-OBJS = covert_search_dp_data.o covert_search_dp_initialize.o covert_search_dp_terminate.o covert_search_dp.o tic.o timeKeeper.o rand.o randsample.o histc.o randn.o toc.o eml_rand_mt19937ar_stateful.o eml_rand_mt19937ar.o covert_search_dp_emxutil.o
+OBJS = covert_search_dp_data.o covert_search_dp_initialize.o covert_search_dp_terminate.o covert_search_dp.o tic.o timeKeeper.o fileManager.o fread.o rand.o randsample.o histc.o randn.o toc.o eml_rand_mt19937ar_stateful.o eml_rand_mt19937ar.o covert_search_dp_emxutil.o
 
 ALL_OBJS = $(OBJS)
 
@@ -322,6 +322,14 @@ tic.o : $(START_DIR)/tic.c
 
 
 timeKeeper.o : $(START_DIR)/timeKeeper.c
+	$(CC) $(CFLAGS) -o "$@" "$<"
+
+
+fileManager.o : $(START_DIR)/fileManager.c
+	$(CC) $(CFLAGS) -o "$@" "$<"
+
+
+fread.o : $(START_DIR)/fread.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 

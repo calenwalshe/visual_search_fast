@@ -13,11 +13,10 @@
 #include "histc.h"
 #include "covert_search_dp_emxutil.h"
 #include "covert_search_dp_types.h"
-#include <string.h>
 
 /* Function Definitions */
-void histc(const emxArray_real_T *X, const double edges[5760001], double N
-           [5760001], emxArray_real_T *BIN)
+void histc(const emxArray_real_T *X, const emxArray_real_T *edges,
+           emxArray_real_T *N, emxArray_real_T *BIN)
 {
   int high_i;
   int i;
@@ -26,7 +25,14 @@ void histc(const emxArray_real_T *X, const double edges[5760001], double N
   int low_ip1;
   int mid_i;
   int xind;
-  memset(&N[0], 0, 5760001U * sizeof(double));
+  i = N->size[0];
+  N->size[0] = edges->size[1];
+  emxEnsureCapacity_real_T(N, i);
+  xind = edges->size[1];
+  for (i = 0; i < xind; i++) {
+    N->data[i] = 0.0;
+  }
+
   i = BIN->size[0];
   BIN->size[0] = X->size[0];
   emxEnsureCapacity_real_T(BIN, i);
@@ -39,13 +45,18 @@ void histc(const emxArray_real_T *X, const double edges[5760001], double N
   i = X->size[0];
   for (k = 0; k < i; k++) {
     low_i = 0;
-    if ((X->data[xind] >= edges[0]) && (X->data[xind] < edges[5760000])) {
+    if ((X->data[xind] >= edges->data[0]) && (X->data[xind] < edges->data
+         [edges->size[1] - 1])) {
+      high_i = edges->size[1];
       low_i = 1;
       low_ip1 = 2;
-      high_i = 5760001;
       while (high_i > low_ip1) {
-        mid_i = (low_i + high_i) >> 1;
-        if (X->data[xind] >= edges[mid_i - 1]) {
+        mid_i = (low_i >> 1) + (high_i >> 1);
+        if (((low_i & 1) == 1) && ((high_i & 1) == 1)) {
+          mid_i++;
+        }
+
+        if (X->data[xind] >= edges->data[mid_i - 1]) {
           low_i = mid_i;
           low_ip1 = mid_i + 1;
         } else {
@@ -54,12 +65,12 @@ void histc(const emxArray_real_T *X, const double edges[5760001], double N
       }
     }
 
-    if (X->data[xind] == edges[5760000]) {
-      low_i = 5760001;
+    if (X->data[xind] == edges->data[edges->size[1] - 1]) {
+      low_i = edges->size[1];
     }
 
     if (low_i > 0) {
-      N[low_i - 1]++;
+      N->data[low_i - 1]++;
     }
 
     BIN->data[xind] = low_i;

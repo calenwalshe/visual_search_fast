@@ -2,7 +2,7 @@
 ## Makefile generated for component 'covert_search_dp'. 
 ## 
 ## Makefile     : covert_search_dp_rtw.mk
-## Generated on : Fri Jan 22 17:13:30 2021
+## Generated on : Mon Jan 25 16:41:00 2021
 ## Final product: /Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/covert_search_dp
 ## Product type : executable
 ## 
@@ -168,7 +168,7 @@ DEFINES = $(DEFINES_CUSTOM) $(DEFINES_STANDARD)
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/examples/main.c $(START_DIR)/covert_search_dp_data.c $(START_DIR)/rt_nonfinite.c $(START_DIR)/rtGetNaN.c $(START_DIR)/rtGetInf.c $(START_DIR)/covert_search_dp_initialize.c $(START_DIR)/covert_search_dp_terminate.c $(START_DIR)/covert_search_dp.c $(START_DIR)/tic.c $(START_DIR)/timeKeeper.c $(START_DIR)/fileManager.c $(START_DIR)/fread.c $(START_DIR)/randperm.c $(START_DIR)/rand.c $(START_DIR)/randsample.c $(START_DIR)/histc.c $(START_DIR)/randn.c $(START_DIR)/toc.c $(START_DIR)/eml_rand_mt19937ar_stateful.c $(START_DIR)/eml_rand_mt19937ar.c $(START_DIR)/covert_search_dp_emxutil.c
+SRCS = /Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/main.c $(START_DIR)/covert_search_dp_data.c $(START_DIR)/covert_search_dp_initialize.c $(START_DIR)/covert_search_dp_terminate.c $(START_DIR)/covert_search_dp.c $(START_DIR)/tic.c $(START_DIR)/timeKeeper.c $(START_DIR)/fileManager.c $(START_DIR)/fread.c $(START_DIR)/rand.c $(START_DIR)/randsample.c $(START_DIR)/histc.c $(START_DIR)/randn.c $(START_DIR)/toc.c $(START_DIR)/eml_rand_mt19937ar_stateful.c $(START_DIR)/eml_rand_mt19937ar.c $(START_DIR)/covert_search_dp_emxutil.c
 
 ALL_SRCS = $(SRCS)
 
@@ -176,7 +176,7 @@ ALL_SRCS = $(SRCS)
 ## OBJECTS
 ###########################################################################
 
-OBJS = main.o covert_search_dp_data.o rt_nonfinite.o rtGetNaN.o rtGetInf.o covert_search_dp_initialize.o covert_search_dp_terminate.o covert_search_dp.o tic.o timeKeeper.o fileManager.o fread.o randperm.o rand.o randsample.o histc.o randn.o toc.o eml_rand_mt19937ar_stateful.o eml_rand_mt19937ar.o covert_search_dp_emxutil.o
+OBJS = main.o covert_search_dp_data.o covert_search_dp_initialize.o covert_search_dp_terminate.o covert_search_dp.o tic.o timeKeeper.o fileManager.o fread.o rand.o randsample.o histc.o randn.o toc.o eml_rand_mt19937ar_stateful.o eml_rand_mt19937ar.o covert_search_dp_emxutil.o
 
 ALL_OBJS = $(OBJS)
 
@@ -306,31 +306,11 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS)
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-%.o : $(START_DIR)/examples/%.c
-	$(CC) $(CFLAGS) -o "$@" "$<"
-
-
-%.o : $(START_DIR)/examples/%.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" "$<"
-
-
-main.o : $(START_DIR)/examples/main.c
+main.o : /Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/main.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
 covert_search_dp_data.o : $(START_DIR)/covert_search_dp_data.c
-	$(CC) $(CFLAGS) -o "$@" "$<"
-
-
-rt_nonfinite.o : $(START_DIR)/rt_nonfinite.c
-	$(CC) $(CFLAGS) -o "$@" "$<"
-
-
-rtGetNaN.o : $(START_DIR)/rtGetNaN.c
-	$(CC) $(CFLAGS) -o "$@" "$<"
-
-
-rtGetInf.o : $(START_DIR)/rtGetInf.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
@@ -359,10 +339,6 @@ fileManager.o : $(START_DIR)/fileManager.c
 
 
 fread.o : $(START_DIR)/fread.c
-	$(CC) $(CFLAGS) -o "$@" "$<"
-
-
-randperm.o : $(START_DIR)/randperm.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 

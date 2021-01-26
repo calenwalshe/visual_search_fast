@@ -1,0 +1,86 @@
+[
+  {
+    "directory": "/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp_gpu",
+    "command": "nvcc -rdc=true -Xcompiler -fPIC,-ansi,-fexceptions,-fno-omit-frame-pointer,-pthread -Xcudafe \"--display_error_number --diag_suppress=2381 --diag_suppress=unsigned_compare_with_zero --diag_suppress=useless_type_qualifier_on_return_type\" -D_GNU_SOURCE -DMATLAB_MEX_FILE -Xcompiler -fvisibility=hidden -Xcompiler -std=c++11 -I \".\" -I \"/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/usr/local/MATLAB/R2020b/extern/include\" -I \".\" -DMW_CUDA_ARCH=350 -DMODEL=covert_search_dp_gpu_mex -DMW_NEEDS_VERSION_H -c -arch sm_35  -I \"/usr/local/MATLAB/R2020b/simulink/include\" -I \"/usr/local/MATLAB/R2020b/toolbox/shared/simtargets\" covert_search_dp_gpu_data.cu -o build/glnxa64/covert_search_dp_gpu_data.o",
+    "file": "covert_search_dp_gpu_data.cu",
+    "output": "build/glnxa64/covert_search_dp_gpu_data.o"
+  },
+  {
+    "directory": "/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp_gpu",
+    "command": "nvcc -rdc=true -Xcompiler -fPIC,-ansi,-fexceptions,-fno-omit-frame-pointer,-pthread -Xcudafe \"--display_error_number --diag_suppress=2381 --diag_suppress=unsigned_compare_with_zero --diag_suppress=useless_type_qualifier_on_return_type\" -D_GNU_SOURCE -DMATLAB_MEX_FILE -Xcompiler -fvisibility=hidden -Xcompiler -std=c++11 -I \".\" -I \"/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/usr/local/MATLAB/R2020b/extern/include\" -I \".\" -DMW_CUDA_ARCH=350 -DMODEL=covert_search_dp_gpu_mex -DMW_NEEDS_VERSION_H -c -arch sm_35  -I \"/usr/local/MATLAB/R2020b/simulink/include\" -I \"/usr/local/MATLAB/R2020b/toolbox/shared/simtargets\" rt_nonfinite.cu -o build/glnxa64/rt_nonfinite.o",
+    "file": "rt_nonfinite.cu",
+    "output": "build/glnxa64/rt_nonfinite.o"
+  },
+  {
+    "directory": "/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp_gpu",
+    "command": "nvcc -rdc=true -Xcompiler -fPIC,-ansi,-fexceptions,-fno-omit-frame-pointer,-pthread -Xcudafe \"--display_error_number --diag_suppress=2381 --diag_suppress=unsigned_compare_with_zero --diag_suppress=useless_type_qualifier_on_return_type\" -D_GNU_SOURCE -DMATLAB_MEX_FILE -Xcompiler -fvisibility=hidden -Xcompiler -std=c++11 -I \".\" -I \"/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/usr/local/MATLAB/R2020b/extern/include\" -I \".\" -DMW_CUDA_ARCH=350 -DMODEL=covert_search_dp_gpu_mex -DMW_NEEDS_VERSION_H -c -arch sm_35  -I \"/usr/local/MATLAB/R2020b/simulink/include\" -I \"/usr/local/MATLAB/R2020b/toolbox/shared/simtargets\" covert_search_dp_gpu_initialize.cu -o build/glnxa64/covert_search_dp_gpu_initialize.o",
+    "file": "covert_search_dp_gpu_initialize.cu",
+    "output": "build/glnxa64/covert_search_dp_gpu_initialize.o"
+  },
+  {
+    "directory": "/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp_gpu",
+    "command": "nvcc -rdc=true -Xcompiler -fPIC,-ansi,-fexceptions,-fno-omit-frame-pointer,-pthread -Xcudafe \"--display_error_number --diag_suppress=2381 --diag_suppress=unsigned_compare_with_zero --diag_suppress=useless_type_qualifier_on_return_type\" -D_GNU_SOURCE -DMATLAB_MEX_FILE -Xcompiler -fvisibility=hidden -Xcompiler -std=c++11 -I \".\" -I \"/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/usr/local/MATLAB/R2020b/extern/include\" -I \".\" -DMW_CUDA_ARCH=350 -DMODEL=covert_search_dp_gpu_mex -DMW_NEEDS_VERSION_H -c -arch sm_35  -I \"/usr/local/MATLAB/R2020b/simulink/include\" -I \"/usr/local/MATLAB/R2020b/toolbox/shared/simtargets\" covert_search_dp_gpu_terminate.cu -o build/glnxa64/covert_search_dp_gpu_terminate.o",
+    "file": "covert_search_dp_gpu_terminate.cu",
+    "output": "build/glnxa64/covert_search_dp_gpu_terminate.o"
+  },
+  {
+    "directory": "/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp_gpu",
+    "command": "nvcc -rdc=true -Xcompiler -fPIC,-ansi,-fexceptions,-fno-omit-frame-pointer,-pthread -Xcudafe \"--display_error_number --diag_suppress=2381 --diag_suppress=unsigned_compare_with_zero --diag_suppress=useless_type_qualifier_on_return_type\" -D_GNU_SOURCE -DMATLAB_MEX_FILE -Xcompiler -fvisibility=hidden -Xcompiler -std=c++11 -I \".\" -I \"/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/usr/local/MATLAB/R2020b/extern/include\" -I \".\" -DMW_CUDA_ARCH=350 -DMODEL=covert_search_dp_gpu_mex -DMW_NEEDS_VERSION_H -c -arch sm_35  -I \"/usr/local/MATLAB/R2020b/simulink/include\" -I \"/usr/local/MATLAB/R2020b/toolbox/shared/simtargets\" covert_search_dp_gpu.cu -o build/glnxa64/covert_search_dp_gpu.o",
+    "file": "covert_search_dp_gpu.cu",
+    "output": "build/glnxa64/covert_search_dp_gpu.o"
+  },
+  {
+    "directory": "/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp_gpu",
+    "command": "nvcc -rdc=true -Xcompiler -fPIC,-ansi,-fexceptions,-fno-omit-frame-pointer,-pthread -Xcudafe \"--display_error_number --diag_suppress=2381 --diag_suppress=unsigned_compare_with_zero --diag_suppress=useless_type_qualifier_on_return_type\" -D_GNU_SOURCE -DMATLAB_MEX_FILE -Xcompiler -fvisibility=hidden -Xcompiler -std=c++11 -I \".\" -I \"/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/usr/local/MATLAB/R2020b/extern/include\" -I \".\" -DMW_CUDA_ARCH=350 -DMODEL=covert_search_dp_gpu_mex -DMW_NEEDS_VERSION_H -c -arch sm_35  -I \"/usr/local/MATLAB/R2020b/simulink/include\" -I \"/usr/local/MATLAB/R2020b/toolbox/shared/simtargets\" tic.cu -o build/glnxa64/tic.o",
+    "file": "tic.cu",
+    "output": "build/glnxa64/tic.o"
+  },
+  {
+    "directory": "/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp_gpu",
+    "command": "nvcc -rdc=true -Xcompiler -fPIC,-ansi,-fexceptions,-fno-omit-frame-pointer,-pthread -Xcudafe \"--display_error_number --diag_suppress=2381 --diag_suppress=unsigned_compare_with_zero --diag_suppress=useless_type_qualifier_on_return_type\" -D_GNU_SOURCE -DMATLAB_MEX_FILE -Xcompiler -fvisibility=hidden -Xcompiler -std=c++11 -I \".\" -I \"/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/usr/local/MATLAB/R2020b/extern/include\" -I \".\" -DMW_CUDA_ARCH=350 -DMODEL=covert_search_dp_gpu_mex -DMW_NEEDS_VERSION_H -c -arch sm_35  -I \"/usr/local/MATLAB/R2020b/simulink/include\" -I \"/usr/local/MATLAB/R2020b/toolbox/shared/simtargets\" timeKeeper.cu -o build/glnxa64/timeKeeper.o",
+    "file": "timeKeeper.cu",
+    "output": "build/glnxa64/timeKeeper.o"
+  },
+  {
+    "directory": "/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp_gpu",
+    "command": "nvcc -rdc=true -Xcompiler -fPIC,-ansi,-fexceptions,-fno-omit-frame-pointer,-pthread -Xcudafe \"--display_error_number --diag_suppress=2381 --diag_suppress=unsigned_compare_with_zero --diag_suppress=useless_type_qualifier_on_return_type\" -D_GNU_SOURCE -DMATLAB_MEX_FILE -Xcompiler -fvisibility=hidden -Xcompiler -std=c++11 -I \".\" -I \"/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/usr/local/MATLAB/R2020b/extern/include\" -I \".\" -DMW_CUDA_ARCH=350 -DMODEL=covert_search_dp_gpu_mex -DMW_NEEDS_VERSION_H -c -arch sm_35  -I \"/usr/local/MATLAB/R2020b/simulink/include\" -I \"/usr/local/MATLAB/R2020b/toolbox/shared/simtargets\" toc.cu -o build/glnxa64/toc.o",
+    "file": "toc.cu",
+    "output": "build/glnxa64/toc.o"
+  },
+  {
+    "directory": "/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp_gpu",
+    "command": "nvcc -rdc=true -Xcompiler -fPIC,-ansi,-fexceptions,-fno-omit-frame-pointer,-pthread -Xcudafe \"--display_error_number --diag_suppress=2381 --diag_suppress=unsigned_compare_with_zero --diag_suppress=useless_type_qualifier_on_return_type\" -D_GNU_SOURCE -DMATLAB_MEX_FILE -Xcompiler -fvisibility=hidden -Xcompiler -std=c++11 -I \".\" -I \"/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/usr/local/MATLAB/R2020b/extern/include\" -I \".\" -DMW_CUDA_ARCH=350 -DMODEL=covert_search_dp_gpu_mex -DMW_NEEDS_VERSION_H -c -arch sm_35  -I \"/usr/local/MATLAB/R2020b/simulink/include\" -I \"/usr/local/MATLAB/R2020b/toolbox/shared/simtargets\" interface/_coder_covert_search_dp_gpu_api.cu -o build/glnxa64/_coder_covert_search_dp_gpu_api.o",
+    "file": "interface/_coder_covert_search_dp_gpu_api.cu",
+    "output": "build/glnxa64/_coder_covert_search_dp_gpu_api.o"
+  },
+  {
+    "directory": "/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp_gpu",
+    "command": "nvcc -rdc=true -Xcompiler -fPIC,-ansi,-fexceptions,-fno-omit-frame-pointer,-pthread -Xcudafe \"--display_error_number --diag_suppress=2381 --diag_suppress=unsigned_compare_with_zero --diag_suppress=useless_type_qualifier_on_return_type\" -D_GNU_SOURCE -DMATLAB_MEX_FILE -Xcompiler -fvisibility=hidden -Xcompiler -std=c++11 -I \".\" -I \"/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/usr/local/MATLAB/R2020b/extern/include\" -I \".\" -DMW_CUDA_ARCH=350 -DMODEL=covert_search_dp_gpu_mex -DMW_NEEDS_VERSION_H -c -arch sm_35  -I \"/usr/local/MATLAB/R2020b/simulink/include\" -I \"/usr/local/MATLAB/R2020b/toolbox/shared/simtargets\" interface/_coder_covert_search_dp_gpu_mex.cu -o build/glnxa64/_coder_covert_search_dp_gpu_mex.o",
+    "file": "interface/_coder_covert_search_dp_gpu_mex.cu",
+    "output": "build/glnxa64/_coder_covert_search_dp_gpu_mex.o"
+  },
+  {
+    "directory": "/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp_gpu",
+    "command": "nvcc -rdc=true -Xcompiler -fPIC,-ansi,-fexceptions,-fno-omit-frame-pointer,-pthread -Xcudafe \"--display_error_number --diag_suppress=2381 --diag_suppress=unsigned_compare_with_zero --diag_suppress=useless_type_qualifier_on_return_type\" -D_GNU_SOURCE -DMATLAB_MEX_FILE -Xcompiler -fvisibility=hidden -Xcompiler -std=c++11 -I \".\" -I \"/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/usr/local/MATLAB/R2020b/extern/include\" -I \".\" -DMW_CUDA_ARCH=350 -DMODEL=covert_search_dp_gpu_mex -DMW_NEEDS_VERSION_H -c -arch sm_35  -I \"/usr/local/MATLAB/R2020b/simulink/include\" -I \"/usr/local/MATLAB/R2020b/toolbox/shared/simtargets\" covert_search_dp_gpu_emxutil.cu -o build/glnxa64/covert_search_dp_gpu_emxutil.o",
+    "file": "covert_search_dp_gpu_emxutil.cu",
+    "output": "build/glnxa64/covert_search_dp_gpu_emxutil.o"
+  },
+  {
+    "directory": "/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp_gpu",
+    "command": "nvcc -rdc=true -Xcompiler -fPIC,-ansi,-fexceptions,-fno-omit-frame-pointer,-pthread -Xcudafe \"--display_error_number --diag_suppress=2381 --diag_suppress=unsigned_compare_with_zero --diag_suppress=useless_type_qualifier_on_return_type\" -D_GNU_SOURCE -DMATLAB_MEX_FILE -Xcompiler -fvisibility=hidden -Xcompiler -std=c++11 -I \".\" -I \"/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/usr/local/MATLAB/R2020b/extern/include\" -I \".\" -DMW_CUDA_ARCH=350 -DMODEL=covert_search_dp_gpu_mex -DMW_NEEDS_VERSION_H -c -arch sm_35  -I \"/usr/local/MATLAB/R2020b/simulink/include\" -I \"/usr/local/MATLAB/R2020b/toolbox/shared/simtargets\" covert_search_dp_gpu_mexutil.cu -o build/glnxa64/covert_search_dp_gpu_mexutil.o",
+    "file": "covert_search_dp_gpu_mexutil.cu",
+    "output": "build/glnxa64/covert_search_dp_gpu_mexutil.o"
+  },
+  {
+    "directory": "/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp_gpu",
+    "command": "nvcc -rdc=true -Xcompiler -fPIC,-ansi,-fexceptions,-fno-omit-frame-pointer,-pthread -Xcudafe \"--display_error_number --diag_suppress=2381 --diag_suppress=unsigned_compare_with_zero --diag_suppress=useless_type_qualifier_on_return_type\" -D_GNU_SOURCE -DMATLAB_MEX_FILE -Xcompiler -fvisibility=hidden -Xcompiler -std=c++11 -I \".\" -I \"/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/usr/local/MATLAB/R2020b/extern/include\" -I \".\" -DMW_CUDA_ARCH=350 -DMODEL=covert_search_dp_gpu_mex -DMW_NEEDS_VERSION_H -c -arch sm_35  -I \"/usr/local/MATLAB/R2020b/simulink/include\" -I \"/usr/local/MATLAB/R2020b/toolbox/shared/simtargets\" interface/_coder_covert_search_dp_gpu_info.cu -o build/glnxa64/_coder_covert_search_dp_gpu_info.o",
+    "file": "interface/_coder_covert_search_dp_gpu_info.cu",
+    "output": "build/glnxa64/_coder_covert_search_dp_gpu_info.o"
+  },
+  {
+    "directory": "/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp_gpu",
+    "command": "nvcc -rdc=true -Xcompiler -fPIC,-ansi,-fexceptions,-fno-omit-frame-pointer,-pthread -Xcudafe \"--display_error_number --diag_suppress=2381 --diag_suppress=unsigned_compare_with_zero --diag_suppress=useless_type_qualifier_on_return_type\" -D_GNU_SOURCE -DMATLAB_MEX_FILE -Xcompiler -fvisibility=hidden -Xcompiler -std=c++11 -I \".\" -I \"/home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/usr/local/MATLAB/R2020b/extern/include\" -I \".\" -DMW_CUDA_ARCH=350 -DMODEL=covert_search_dp_gpu_mex -DMW_NEEDS_VERSION_H -c -arch sm_35  -I \"/usr/local/MATLAB/R2020b/simulink/include\" -I \"/usr/local/MATLAB/R2020b/toolbox/shared/simtargets\" cpp_mexapi_version.cpp -o build/glnxa64/cpp_mexapi_version.o",
+    "file": "cpp_mexapi_version.cpp",
+    "output": "build/glnxa64/cpp_mexapi_version.o"
+  }
+]

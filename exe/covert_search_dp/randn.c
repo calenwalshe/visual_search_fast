@@ -13,7 +13,6 @@
 #include "randn.h"
 #include "covert_search_dp_data.h"
 #include "eml_rand_mt19937ar.h"
-#include "rt_nonfinite.h"
 #include <math.h>
 
 /* Function Definitions */

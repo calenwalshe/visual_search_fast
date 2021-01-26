@@ -14,45 +14,42 @@
 #include "_coder_covert_search_dp_api.h"
 
 /* Function Definitions */
-void covert_search_dp_mexFunction(int32_T nlhs, mxArray *plhs[1], int32_T nrhs,
-  const mxArray *prhs[5])
+void covert_search_dp_mexFunction(int32_T nlhs, int32_T nrhs, const mxArray
+  *prhs[3])
 {
   emlrtStack st = { NULL,              /* site */
     NULL,                              /* tls */
     NULL                               /* prev */
   };
 
-  const mxArray *outputs[1];
   st.tls = emlrtRootTLSGlobal;
 
   /* Check for proper number of arguments. */
-  if (nrhs != 5) {
-    emlrtErrMsgIdAndTxt(&st, "EMLRT:runTime:WrongNumberOfInputs", 5, 12, 5, 4,
+  if (nrhs != 3) {
+    emlrtErrMsgIdAndTxt(&st, "EMLRT:runTime:WrongNumberOfInputs", 5, 12, 3, 4,
                         16, "covert_search_dp");
   }
 
-  if (nlhs > 1) {
+  if (nlhs > 0) {
     emlrtErrMsgIdAndTxt(&st, "EMLRT:runTime:TooManyOutputArguments", 3, 4, 16,
                         "covert_search_dp");
   }
 
   /* Call the function. */
-  covert_search_dp_api(prhs, outputs);
-
-  /* Copy over outputs to the caller. */
-  emlrtReturnArrays(1, plhs, outputs);
+  covert_search_dp_api(prhs);
 }
 
 void mexFunction(int32_T nlhs, mxArray *plhs[], int32_T nrhs, const mxArray
                  *prhs[])
 {
+  (void)plhs;
   mexAtExit(&covert_search_dp_atexit);
 
   /* Module initialization. */
   covert_search_dp_initialize();
 
   /* Dispatch the entry-point. */
-  covert_search_dp_mexFunction(nlhs, plhs, nrhs, prhs);
+  covert_search_dp_mexFunction(nlhs, nrhs, prhs);
 
   /* Module termination. */
   covert_search_dp_terminate();

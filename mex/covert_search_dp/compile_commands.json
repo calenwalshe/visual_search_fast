@@ -1,0 +1,140 @@
+[
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  covert_search_dp_data.cpp -o build/maci64/covert_search_dp_data.o",
+    "file": "covert_search_dp_data.cpp",
+    "output": "build/maci64/covert_search_dp_data.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  rt_nonfinite.cpp -o build/maci64/rt_nonfinite.o",
+    "file": "rt_nonfinite.cpp",
+    "output": "build/maci64/rt_nonfinite.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  covert_search_dp_initialize.cpp -o build/maci64/covert_search_dp_initialize.o",
+    "file": "covert_search_dp_initialize.cpp",
+    "output": "build/maci64/covert_search_dp_initialize.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  covert_search_dp_terminate.cpp -o build/maci64/covert_search_dp_terminate.o",
+    "file": "covert_search_dp_terminate.cpp",
+    "output": "build/maci64/covert_search_dp_terminate.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  covert_search_dp.cpp -o build/maci64/covert_search_dp.o",
+    "file": "covert_search_dp.cpp",
+    "output": "build/maci64/covert_search_dp.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  tic.cpp -o build/maci64/tic.o",
+    "file": "tic.cpp",
+    "output": "build/maci64/tic.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  timeKeeper.cpp -o build/maci64/timeKeeper.o",
+    "file": "timeKeeper.cpp",
+    "output": "build/maci64/timeKeeper.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  fileManager.cpp -o build/maci64/fileManager.o",
+    "file": "fileManager.cpp",
+    "output": "build/maci64/fileManager.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  fread.cpp -o build/maci64/fread.o",
+    "file": "fread.cpp",
+    "output": "build/maci64/fread.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  eml_int_forloop_overflow_check.cpp -o build/maci64/eml_int_forloop_overflow_check.o",
+    "file": "eml_int_forloop_overflow_check.cpp",
+    "output": "build/maci64/eml_int_forloop_overflow_check.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  imrotate.cpp -o build/maci64/imrotate.o",
+    "file": "imrotate.cpp",
+    "output": "build/maci64/imrotate.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  randperm.cpp -o build/maci64/randperm.o",
+    "file": "randperm.cpp",
+    "output": "build/maci64/randperm.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  rand.cpp -o build/maci64/rand.o",
+    "file": "rand.cpp",
+    "output": "build/maci64/rand.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  indexShapeCheck.cpp -o build/maci64/indexShapeCheck.o",
+    "file": "indexShapeCheck.cpp",
+    "output": "build/maci64/indexShapeCheck.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  randsample.cpp -o build/maci64/randsample.o",
+    "file": "randsample.cpp",
+    "output": "build/maci64/randsample.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  ind2sub.cpp -o build/maci64/ind2sub.o",
+    "file": "ind2sub.cpp",
+    "output": "build/maci64/ind2sub.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  randn.cpp -o build/maci64/randn.o",
+    "file": "randn.cpp",
+    "output": "build/maci64/randn.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  toc.cpp -o build/maci64/toc.o",
+    "file": "toc.cpp",
+    "output": "build/maci64/toc.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  interface/_coder_covert_search_dp_api.cpp -o build/maci64/_coder_covert_search_dp_api.o",
+    "file": "interface/_coder_covert_search_dp_api.cpp",
+    "output": "build/maci64/_coder_covert_search_dp_api.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  interface/_coder_covert_search_dp_mex.cpp -o build/maci64/_coder_covert_search_dp_mex.o",
+    "file": "interface/_coder_covert_search_dp_mex.cpp",
+    "output": "build/maci64/_coder_covert_search_dp_mex.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  covert_search_dp_mexutil.cpp -o build/maci64/covert_search_dp_mexutil.o",
+    "file": "covert_search_dp_mexutil.cpp",
+    "output": "build/maci64/covert_search_dp_mexutil.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  interface/_coder_covert_search_dp_info.cpp -o build/maci64/_coder_covert_search_dp_info.o",
+    "file": "interface/_coder_covert_search_dp_info.cpp",
+    "output": "build/maci64/_coder_covert_search_dp_info.o"
+  },
+  {
+    "directory": "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/codegen/mex/covert_search_dp",
+    "command": "/usr/bin/xcrun -sdk macosx11.1 clang++ -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -fobjc-arc -std=c++11 -stdlib=libc++ -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I \".\" -I \"/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=covert_search_dp_mex -DMW_NEEDS_VERSION_H -c  /Applications/MATLAB_R2020b.app/extern/version/cpp_mexapi_version.cpp -o build/maci64/cpp_mexapi_version.o",
+    "file": "/Applications/MATLAB_R2020b.app/extern/version/cpp_mexapi_version.cpp",
+    "output": "build/maci64/cpp_mexapi_version.o"
+  }
+]

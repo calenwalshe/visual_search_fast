@@ -24,8 +24,8 @@ extern "C" {
 #endif
 
   /* Function Declarations */
-  void histc(const emxArray_real_T *X, const double edges[5760001], double N
-             [5760001], emxArray_real_T *BIN);
+  void histc(const emxArray_real_T *X, const emxArray_real_T *edges,
+             emxArray_real_T *N, emxArray_real_T *BIN);
 
 #ifdef __cplusplus
 

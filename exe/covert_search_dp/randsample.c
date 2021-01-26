@@ -15,21 +15,22 @@
 #include "covert_search_dp_types.h"
 #include "histc.h"
 #include "rand.h"
-#include "rt_nonfinite.h"
 #include <math.h>
 
 /* Function Definitions */
-void randsample(double varargin_1, const emxArray_real_T *varargin_4, double y
-                [2400])
+void randsample(double varargin_1, double varargin_2, const emxArray_real_T
+                *varargin_4, emxArray_real_T *y)
 {
   emxArray_real_T *edges;
+  emxArray_real_T *r;
   emxArray_real_T *unusedU0;
-  double dv[2400];
   double n;
   double sumw;
+  double x_tmp;
   int k;
   int vlen;
   n = floor(varargin_1);
+  x_tmp = floor(varargin_2);
   emxInit_real_T(&edges, 2);
   if (varargin_4->size[0] != 0) {
     vlen = varargin_4->size[0];
@@ -56,16 +57,24 @@ void randsample(double varargin_1, const emxArray_real_T *varargin_4, double y
     edges->data[0] = 0.0;
   }
 
-  if (varargin_4->size[0] == 0) {
-    b_rand(y);
-    for (k = 0; k < 2400; k++) {
-      y[k] = floor(y[k] * n) + 1.0;
+  vlen = y->size[0];
+  y->size[0] = (int)x_tmp;
+  emxEnsureCapacity_real_T(y, vlen);
+  if ((int)x_tmp > 0) {
+    if (varargin_4->size[0] == 0) {
+      c_rand((int)x_tmp, y);
+      vlen = y->size[0];
+      for (k = 0; k < vlen; k++) {
+        y->data[k] = floor(y->data[k] * n) + 1.0;
+      }
+    } else {
+      emxInit_real_T(&unusedU0, 1);
+      emxInit_real_T(&r, 1);
+      c_rand((int)x_tmp, r);
+      histc(r, edges, unusedU0, y);
+      emxFree_real_T(&r);
+      emxFree_real_T(&unusedU0);
     }
-  } else {
-    emxInit_real_T(&unusedU0, 1);
-    b_rand(dv);
-    histc(dv, edges, unusedU0, y);
-    emxFree_real_T(&unusedU0);
   }
 
   emxFree_real_T(&edges);

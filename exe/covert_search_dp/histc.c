@@ -13,33 +13,40 @@
 #include "histc.h"
 #include "covert_search_dp_emxutil.h"
 #include "covert_search_dp_types.h"
-#include "rt_nonfinite.h"
-#include <string.h>
 
 /* Function Definitions */
-void histc(const double X[2400], const emxArray_real_T *edges, emxArray_real_T
-           *N, double BIN[2400])
+void histc(const emxArray_real_T *X, const emxArray_real_T *edges,
+           emxArray_real_T *N, emxArray_real_T *BIN)
 {
   int high_i;
+  int i;
   int k;
   int low_i;
   int low_ip1;
   int mid_i;
   int xind;
-  high_i = N->size[0];
+  i = N->size[0];
   N->size[0] = edges->size[1];
-  emxEnsureCapacity_real_T(N, high_i);
+  emxEnsureCapacity_real_T(N, i);
   xind = edges->size[1];
-  for (high_i = 0; high_i < xind; high_i++) {
-    N->data[high_i] = 0.0;
+  for (i = 0; i < xind; i++) {
+    N->data[i] = 0.0;
   }
 
-  memset(&BIN[0], 0, 2400U * sizeof(double));
+  i = BIN->size[0];
+  BIN->size[0] = X->size[0];
+  emxEnsureCapacity_real_T(BIN, i);
+  xind = X->size[0];
+  for (i = 0; i < xind; i++) {
+    BIN->data[i] = 0.0;
+  }
+
   xind = 0;
-  for (k = 0; k < 2400; k++) {
+  i = X->size[0];
+  for (k = 0; k < i; k++) {
     low_i = 0;
-    if ((X[xind] >= edges->data[0]) && (X[xind] < edges->data[edges->size[1] - 1]))
-    {
+    if ((X->data[xind] >= edges->data[0]) && (X->data[xind] < edges->data
+         [edges->size[1] - 1])) {
       high_i = edges->size[1];
       low_i = 1;
       low_ip1 = 2;
@@ -49,7 +56,7 @@ void histc(const double X[2400], const emxArray_real_T *edges, emxArray_real_T
           mid_i++;
         }
 
-        if (X[xind] >= edges->data[mid_i - 1]) {
+        if (X->data[xind] >= edges->data[mid_i - 1]) {
           low_i = mid_i;
           low_ip1 = mid_i + 1;
         } else {
@@ -58,7 +65,7 @@ void histc(const double X[2400], const emxArray_real_T *edges, emxArray_real_T
       }
     }
 
-    if (X[xind] == edges->data[edges->size[1] - 1]) {
+    if (X->data[xind] == edges->data[edges->size[1] - 1]) {
       low_i = edges->size[1];
     }
 
@@ -66,7 +73,7 @@ void histc(const double X[2400], const emxArray_real_T *edges, emxArray_real_T
       N->data[low_i - 1]++;
     }
 
-    BIN[xind] = low_i;
+    BIN->data[xind] = low_i;
     xind++;
   }
 }

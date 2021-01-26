@@ -12,7 +12,6 @@
 /* Include files */
 #include "eml_rand_mt19937ar_stateful.h"
 #include "covert_search_dp_data.h"
-#include "rt_nonfinite.h"
 #include <string.h>
 
 /* Function Definitions */

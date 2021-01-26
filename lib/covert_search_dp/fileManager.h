@@ -3,14 +3,14 @@
  * course requirements at degree granting institutions only.  Not for
  * government, commercial, or other organizational use.
  *
- * randperm.h
+ * fileManager.h
  *
- * Code generation for function 'randperm'
+ * Code generation for function 'fileManager'
  *
  */
 
-#ifndef RANDPERM_H
-#define RANDPERM_H
+#ifndef FILEMANAGER_H
+#define FILEMANAGER_H
 
 /* Include files */
 #include "rtwtypes.h"
@@ -23,7 +23,10 @@ extern "C" {
 #endif
 
   /* Function Declarations */
-  void randperm(double p[2400]);
+  signed char b_cfopen(const char cfilename[10], const char *cpermission);
+  signed char c_cfopen(const char *cfilename, const char *cpermission);
+  signed char cfopen(const char cfilename[9], const char *cpermission);
+  void filedata_init(void);
 
 #ifdef __cplusplus
 
@@ -31,4 +34,4 @@ extern "C" {
 #endif
 #endif
 
-/* End of code generation (randperm.h) */
+/* End of code generation (fileManager.h) */

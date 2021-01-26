@@ -15,10 +15,12 @@
 /* Include files */
 #include "rtwtypes.h"
 #include <stddef.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 /* Variable Declarations */
 extern unsigned int state[625];
+extern FILE * eml_openfiles[20];
 extern boolean_T isInitialized_covert_search_dp;
 
 #endif

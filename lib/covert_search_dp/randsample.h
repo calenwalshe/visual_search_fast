@@ -24,8 +24,8 @@ extern "C" {
 #endif
 
   /* Function Declarations */
-  void randsample(double varargin_2, const double varargin_4[5760000],
-                  emxArray_real_T *y);
+  void randsample(double varargin_1, double varargin_2, const emxArray_real_T
+                  *varargin_4, emxArray_real_T *y);
 
 #ifdef __cplusplus
 

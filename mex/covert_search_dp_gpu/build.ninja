@@ -1,0 +1,63 @@
+# CompilerName=gcc
+# Mode=optim
+ninja_required_version = 1.3
+
+# Basic folders
+root = .
+builddir = $root/build/glnxa64
+matlabdir = /usr/local/MATLAB/R2020b
+startdir = /home/calen/Dropbox/Calen/Work/search/modeling/visual_search_c
+
+# Toolchain information
+cc = gcc
+cxx = /usr/local/cuda-10.1/bin/g++
+linker = gcc
+linkerxx = /usr/local/cuda-10.1/bin/g++
+
+cflags =  -fexceptions -fPIC -fno-omit-frame-pointer -pthread -D_GNU_SOURCE -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c99 -I "$root" -I "$startdir" -I "$root/interface" -I "$matlabdir/extern/include" -I "." -DMW_CUDA_ARCH=350 -DMODEL=covert_search_dp_gpu_mex -DMW_NEEDS_VERSION_H -c 
+
+cxxflags =  -fexceptions -fPIC -fno-omit-frame-pointer -pthread -std=c++11 -D_GNU_SOURCE -DMATLAB_MEX_FILE  -O2 -fwrapv -DNDEBUG -fvisibility=hidden -std=c++11 -I "$root" -I "$startdir" -I "$root/interface" -I "$matlabdir/extern/include" -I "." -DMW_CUDA_ARCH=350 -DMODEL=covert_search_dp_gpu_mex -DMW_NEEDS_VERSION_H -c 
+
+ldflags =  -Xlinker --no-undefined  -shared -Xlinker --as-needed -Xlinker -rpath-link,$matlabdir/bin/glnxa64 -L"$matlabdir/bin/glnxa64" -Xlinker -rpath-link,$matlabdir/extern/bin/glnxa64 -L"$matlabdir/extern/bin/glnxa64" -lMatlabDataArray -lmx -lmex -lmat -lm -lstdc++  -o covert_search_dp_gpu_mex.mexa64 -lemlrt -lcovrt -lut -lmwmathutil -arch sm_35  -lcudart -lcublas -lcusolver -lcufft -lc -Xnvlink -w  -Wno-deprecated-gpu-targets
+
+# Build Rules
+rule cc
+    command = $cc $cflags $in -o $out
+
+rule cxx
+    command = $cxx $cxxflags $in -o $out
+
+rule link
+    command = $linker $in $ldflags
+
+rule linkxx
+    command = $linkerxx $in $ldflags
+
+cudac = nvcc
+linkercuda = nvcc
+
+cudaflags =  -rdc=true -Xcompiler -fPIC,-ansi,-fexceptions,-fno-omit-frame-pointer,-pthread -Xcudafe "--display_error_number --diag_suppress=2381 --diag_suppress=unsigned_compare_with_zero --diag_suppress=useless_type_qualifier_on_return_type" -D_GNU_SOURCE -DMATLAB_MEX_FILE -Xcompiler -fvisibility=hidden -Xcompiler -std=c++11 -I "$root" -I "$startdir" -I "$root/interface" -I "$matlabdir/extern/include" -I "." -DMW_CUDA_ARCH=350 -DMODEL=covert_search_dp_gpu_mex -DMW_NEEDS_VERSION_H -c -arch sm_35  -I "$matlabdir/simulink/include" -I "$matlabdir/toolbox/shared/simtargets"
+rule cudac
+    command = $cudac $cudaflags $in -o $out
+
+rule linkcuda
+    command = $linkercuda $in $ldflags
+
+# Build
+build $builddir/covert_search_dp_gpu_data.o : cudac $root/covert_search_dp_gpu_data.cu
+build $builddir/rt_nonfinite.o : cudac $root/rt_nonfinite.cu
+build $builddir/covert_search_dp_gpu_initialize.o : cudac $root/covert_search_dp_gpu_initialize.cu
+build $builddir/covert_search_dp_gpu_terminate.o : cudac $root/covert_search_dp_gpu_terminate.cu
+build $builddir/covert_search_dp_gpu.o : cudac $root/covert_search_dp_gpu.cu
+build $builddir/tic.o : cudac $root/tic.cu
+build $builddir/timeKeeper.o : cudac $root/timeKeeper.cu
+build $builddir/toc.o : cudac $root/toc.cu
+build $builddir/_coder_covert_search_dp_gpu_api.o : cudac $root/interface/_coder_covert_search_dp_gpu_api.cu
+build $builddir/_coder_covert_search_dp_gpu_mex.o : cudac $root/interface/_coder_covert_search_dp_gpu_mex.cu
+build $builddir/covert_search_dp_gpu_emxutil.o : cudac $root/covert_search_dp_gpu_emxutil.cu
+build $builddir/covert_search_dp_gpu_mexutil.o : cudac $root/covert_search_dp_gpu_mexutil.cu
+build $builddir/_coder_covert_search_dp_gpu_info.o : cudac $root/interface/_coder_covert_search_dp_gpu_info.cu
+build $builddir/cpp_mexapi_version.o : cudac $root/cpp_mexapi_version.cpp
+
+# Link
+build $root/covert_search_dp_gpu_mex.mexa64 : linkcuda $builddir/covert_search_dp_gpu_data.o $builddir/rt_nonfinite.o $builddir/covert_search_dp_gpu_initialize.o $builddir/covert_search_dp_gpu_terminate.o $builddir/covert_search_dp_gpu.o $builddir/tic.o $builddir/timeKeeper.o $builddir/toc.o $builddir/_coder_covert_search_dp_gpu_api.o $builddir/_coder_covert_search_dp_gpu_mex.o $builddir/covert_search_dp_gpu_emxutil.o $builddir/covert_search_dp_gpu_mexutil.o $builddir/_coder_covert_search_dp_gpu_info.o $builddir/cpp_mexapi_version.o 

@@ -12,7 +12,6 @@
 /* Include files */
 #include "covert_search_dp_terminate.h"
 #include "covert_search_dp_data.h"
-#include "rt_nonfinite.h"
 
 /* Function Definitions */
 void covert_search_dp_terminate(void)

@@ -14,7 +14,6 @@
 #include "covert_search_dp_data.h"
 #include "eml_rand_mt19937ar_stateful.h"
 #include "fileManager.h"
-#include "rt_nonfinite.h"
 #include "timeKeeper.h"
 
 /* Function Definitions */

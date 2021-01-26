@@ -3,27 +3,29 @@
  * course requirements at degree granting institutions only.  Not for
  * government, commercial, or other organizational use.
  *
- * rtGetInf.h
+ * fread.h
  *
- * Code generation for function 'covert_search_dp'
+ * Code generation for function 'fread'
  *
  */
 
-#ifndef RTGETINF_H
-#define RTGETINF_H
+#ifndef FREAD_H
+#define FREAD_H
 
 /* Include files */
+#include "covert_search_dp_types.h"
 #include "rtwtypes.h"
+#include <stddef.h>
+#include <stdlib.h>
 #ifdef __cplusplus
 
 extern "C" {
 
 #endif
 
-  extern real_T rtGetInf(void);
-  extern real32_T rtGetInfF(void);
-  extern real_T rtGetMinusInf(void);
-  extern real32_T rtGetMinusInfF(void);
+  /* Function Declarations */
+  void b_fread(double fileID, emxArray_real_T *A);
+  void c_fread(double fileID, emxArray_real_T *A);
 
 #ifdef __cplusplus
 
@@ -31,4 +33,4 @@ extern "C" {
 #endif
 #endif
 
-/* End of code generation (rtGetInf.h) */
+/* End of code generation (fread.h) */

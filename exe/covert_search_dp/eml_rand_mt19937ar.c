@@ -11,7 +11,6 @@
 
 /* Include files */
 #include "eml_rand_mt19937ar.h"
-#include "rt_nonfinite.h"
 
 /* Function Definitions */
 void genrand_uint32_vector(unsigned int mt[625], unsigned int u[2])

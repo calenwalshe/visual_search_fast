@@ -23,8 +23,8 @@ extern "C" {
 #endif
 
   /* Function Declarations */
-  extern double covert_search_dp(double trials, const double priorh[5760000],
-    const double dpmap[5760000], const double rtmp[18225], double seed_val);
+  extern void covert_search_dp(double trials, const char dpmapfp[9], const char
+    priorhfp[10]);
 
 #ifdef __cplusplus
 

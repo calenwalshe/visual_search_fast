@@ -11,7 +11,6 @@
 
 /* Include files */
 #include "toc.h"
-#include "rt_nonfinite.h"
 #include "timeKeeper.h"
 #include <stdio.h>
 #include <time.h>

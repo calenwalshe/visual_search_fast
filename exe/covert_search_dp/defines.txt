@@ -1,1 +1,0 @@
-MODEL=covert_search_dp

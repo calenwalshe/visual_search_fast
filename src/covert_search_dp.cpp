@@ -22,6 +22,7 @@
 #include "toc.h"
 #include "coder_array.h"
 #include <cmath>
+#include <iostream>
 
 // Function Definitions
 void covert_search_dp(double trials, const double dpmap[5760000], const double
@@ -260,6 +261,7 @@ void covert_search_dp(double trials, const double dpmap[5760000], const double
   //  Run simulation loop
   b_i = static_cast<int>(trials);
   for (k = 0; k < b_i; k++) {
+    std::cout << k << "\n";
     int tpa;
     int xt;
     int yt;

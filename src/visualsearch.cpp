@@ -21,21 +21,26 @@ void testcall(const double b[5760000], const double c[5760000]) {
 
 
 // [[Rcpp::export]]
-NumericVector timesTwo(NumericVector x) {
+NumericVector timesTwo(NumericVector trials_, NumericVector seed_) {
   static double a[5760000];
+  //a = new double[5760000];
+  for(int i = 1; i < 5760000; i++) {
+    a[i] = 1.0;
+  }
+  
+  static double b[5760000];
 //a = new double[5760000];
   for(int i = 1; i < 5760000; i++) {
-    a[i] = 2;
+    b[i] = 1/5760000;
   }
 
-  std::cout << x[0];
-  double trials = x[0];
-  double seed = 10;
+  double trials = trials_[0];
+  double seed = seed_[0];
   
   
   coder::array<double, 2U> results;
-  covert_search_dp(trials, a, a, seed, results);
+  covert_search_dp(trials, a, b, seed, results);
   
   Rcout << results[1];
-  return x * 2;
+  return trials_[0] * 2;
 }

@@ -6,19 +6,20 @@
 using namespace Rcpp;
 
 // timesTwo
-NumericVector timesTwo(NumericVector x);
-RcppExport SEXP _visualsearch_timesTwo(SEXP xSEXP) {
+NumericVector timesTwo(NumericVector trials_, NumericVector seed_);
+RcppExport SEXP _visualsearch_timesTwo(SEXP trials_SEXP, SEXP seed_SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(timesTwo(x));
+    Rcpp::traits::input_parameter< NumericVector >::type trials_(trials_SEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type seed_(seed_SEXP);
+    rcpp_result_gen = Rcpp::wrap(timesTwo(trials_, seed_));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_visualsearch_timesTwo", (DL_FUNC) &_visualsearch_timesTwo, 1},
+    {"_visualsearch_timesTwo", (DL_FUNC) &_visualsearch_timesTwo, 2},
     {NULL, NULL, 0}
 };
 

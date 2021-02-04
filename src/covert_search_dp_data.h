@@ -16,9 +16,11 @@
 #include "rtwtypes.h"
 #include <cstddef>
 #include <cstdlib>
+#include <stdio.h>
 
 // Variable Declarations
 extern unsigned int state[625];
+extern FILE * eml_openfiles[20];
 extern boolean_T isInitialized_covert_search_dp;
 
 #endif

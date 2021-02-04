@@ -2,7 +2,7 @@
 ## Makefile generated for component 'covert_search_dp'. 
 ## 
 ## Makefile     : covert_search_dp_rtw.mk
-## Generated on : Thu Feb 04 12:11:24 2021
+## Generated on : Thu Feb 04 17:46:13 2021
 ## Final product: ./covert_search_dp.a
 ## Product type : static-library
 ## 
@@ -170,7 +170,7 @@ DEFINES = $(DEFINES_CUSTOM) $(DEFINES_STANDARD)
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/covert_search_dp_data.cpp $(START_DIR)/rt_nonfinite.cpp $(START_DIR)/rtGetNaN.cpp $(START_DIR)/rtGetInf.cpp $(START_DIR)/covert_search_dp_initialize.cpp $(START_DIR)/covert_search_dp_terminate.cpp $(START_DIR)/covert_search_dp.cpp $(START_DIR)/tic.cpp $(START_DIR)/timeKeeper.cpp $(START_DIR)/rand.cpp $(START_DIR)/randsample.cpp $(START_DIR)/histc.cpp $(START_DIR)/randn.cpp $(START_DIR)/minOrMax.cpp $(START_DIR)/toc.cpp $(START_DIR)/eml_rand_mt19937ar_stateful.cpp $(START_DIR)/eml_rand_mt19937ar.cpp
+SRCS = $(START_DIR)/covert_search_dp_data.cpp $(START_DIR)/rt_nonfinite.cpp $(START_DIR)/rtGetNaN.cpp $(START_DIR)/rtGetInf.cpp $(START_DIR)/covert_search_dp_initialize.cpp $(START_DIR)/covert_search_dp_terminate.cpp $(START_DIR)/covert_search_dp.cpp $(START_DIR)/tic.cpp $(START_DIR)/timeKeeper.cpp $(START_DIR)/fileManager.cpp $(START_DIR)/fread.cpp $(START_DIR)/rand.cpp $(START_DIR)/randsample.cpp $(START_DIR)/histc.cpp $(START_DIR)/randn.cpp $(START_DIR)/minOrMax.cpp $(START_DIR)/toc.cpp $(START_DIR)/eml_rand_mt19937ar_stateful.cpp $(START_DIR)/eml_rand_mt19937ar.cpp
 
 ALL_SRCS = $(SRCS)
 
@@ -178,7 +178,7 @@ ALL_SRCS = $(SRCS)
 ## OBJECTS
 ###########################################################################
 
-OBJS = covert_search_dp_data.o rt_nonfinite.o rtGetNaN.o rtGetInf.o covert_search_dp_initialize.o covert_search_dp_terminate.o covert_search_dp.o tic.o timeKeeper.o rand.o randsample.o histc.o randn.o minOrMax.o toc.o eml_rand_mt19937ar_stateful.o eml_rand_mt19937ar.o
+OBJS = covert_search_dp_data.o rt_nonfinite.o rtGetNaN.o rtGetInf.o covert_search_dp_initialize.o covert_search_dp_terminate.o covert_search_dp.o tic.o timeKeeper.o fileManager.o fread.o rand.o randsample.o histc.o randn.o minOrMax.o toc.o eml_rand_mt19937ar_stateful.o eml_rand_mt19937ar.o
 
 ALL_OBJS = $(OBJS)
 
@@ -334,6 +334,14 @@ tic.o : $(START_DIR)/tic.cpp
 
 
 timeKeeper.o : $(START_DIR)/timeKeeper.cpp
+	$(CPP) $(CPPFLAGS) -o "$@" "$<"
+
+
+fileManager.o : $(START_DIR)/fileManager.cpp
+	$(CPP) $(CPPFLAGS) -o "$@" "$<"
+
+
+fread.o : $(START_DIR)/fread.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 

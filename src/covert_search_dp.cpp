@@ -13,6 +13,8 @@
 #include "covert_search_dp.h"
 #include "covert_search_dp_data.h"
 #include "covert_search_dp_initialize.h"
+#include "fileManager.h"
+#include "fread.h"
 #include "minOrMax.h"
 #include "rand.h"
 #include "randn.h"
@@ -22,7 +24,6 @@
 #include "toc.h"
 #include "coder_array.h"
 #include <cmath>
-#include <iostream>
 
 // Function Definitions
 void covert_search_dp(double trials, const double dpmap[5760000], const double
@@ -32,16 +33,16 @@ void covert_search_dp(double trials, const double dpmap[5760000], const double
   static double half_dpmap_with_eprior[5760000];
   static double lnepriorh[5760000];
   static double re[360000];
-  coder::array<double, 2U> b_dpmap;
+  coder::array<double, 2U> b_fileid;
+  coder::array<double, 2U> r;
   coder::array<double, 1U> b_k;
   coder::array<int, 2U> idx;
   coder::array<int, 1U> iwork;
   coder::array<int, 1U> vk;
-  coder::array<short, 1U> jj;
   coder::array<signed char, 1U> b_tpaMat;
   coder::array<signed char, 1U> tpaMat;
-  double y[18225];
   double x_tmp;
+  int ii_data[1];
   int b_i;
   unsigned int b_seed;
   int i;
@@ -55,6 +56,7 @@ void covert_search_dp(double trials, const double dpmap[5760000], const double
   int pEnd;
   int q;
   int qEnd;
+  short jj_data[1];
   if (!isInitialized_covert_search_dp) {
     covert_search_dp_initialize();
   }
@@ -98,14 +100,11 @@ void covert_search_dp(double trials, const double dpmap[5760000], const double
     state[i + 1] = b_seed;
   }
 
+  signed char fileid;
   state[624] = 624U;
+  fileid = coder::cfopen("./rtmp.bin", "rb");
+  coder::b_fread(static_cast<double>(fileid), b_fileid);
 
-  // dpmap = abs(randn(2400, 2400));
-  // fileID = fopen(priorhfp);
-  // priorh = fread(fileID, [2400, 2400], 'double');
-  // priorh = ones(2400, 2400);
-  // fileID = fopen('rtmp.bin');
-  // rtmp   = fread(fileID, [135, 135], 'double');
   //  Setup some generic parameters for size
   //
   //  Create effective prior
@@ -127,19 +126,19 @@ void covert_search_dp(double trials, const double dpmap[5760000], const double
   }
 
   //  1 for target present, 0 for absent.
-  coder::b_rand(static_cast<double>(tpaMat.size(0)), b_dpmap);
-  n = b_dpmap.size(1) + 1;
-  idx.set_size(1, b_dpmap.size(1));
-  pEnd = b_dpmap.size(1);
+  coder::b_rand(static_cast<double>(tpaMat.size(0)), r);
+  n = r.size(1) + 1;
+  idx.set_size(1, r.size(1));
+  pEnd = r.size(1);
   for (b_i = 0; b_i < pEnd; b_i++) {
     idx[b_i] = 0;
   }
 
-  if (b_dpmap.size(1) != 0) {
-    iwork.set_size(b_dpmap.size(1));
-    b_i = b_dpmap.size(1) - 1;
+  if (r.size(1) != 0) {
+    iwork.set_size(r.size(1));
+    b_i = r.size(1) - 1;
     for (k = 1; k <= b_i; k += 2) {
-      if (b_dpmap[k - 1] <= b_dpmap[k]) {
+      if (r[k - 1] <= r[k]) {
         idx[k - 1] = k;
         idx[k] = k + 1;
       } else {
@@ -148,8 +147,8 @@ void covert_search_dp(double trials, const double dpmap[5760000], const double
       }
     }
 
-    if ((b_dpmap.size(1) & 1) != 0) {
-      idx[b_dpmap.size(1) - 1] = b_dpmap.size(1);
+    if ((r.size(1) & 1) != 0) {
+      idx[r.size(1) - 1] = r.size(1);
     }
 
     i = 2;
@@ -169,7 +168,7 @@ void covert_search_dp(double trials, const double dpmap[5760000], const double
         while (k + 1 <= kEnd) {
           b_i = idx[q - 1];
           i1 = idx[p - 1];
-          if (b_dpmap[i1 - 1] <= b_dpmap[b_i - 1]) {
+          if (r[i1 - 1] <= r[b_i - 1]) {
             iwork[k] = i1;
             p++;
             if (p == pEnd) {
@@ -205,18 +204,18 @@ void covert_search_dp(double trials, const double dpmap[5760000], const double
     }
   }
 
-  i2 = b_dpmap.size(0);
-  i = b_dpmap.size(1);
-  b_dpmap.set_size(1, i);
-  pEnd = i2 * i;
+  i = r.size(0);
+  j = r.size(1);
+  r.set_size(1, j);
+  pEnd = i * j;
   for (b_i = 0; b_i < pEnd; b_i++) {
-    b_dpmap[b_i] = idx[b_i];
+    r[b_i] = idx[b_i];
   }
 
-  b_tpaMat.set_size(b_dpmap.size(1));
-  pEnd = b_dpmap.size(1);
+  b_tpaMat.set_size(r.size(1));
+  pEnd = r.size(1);
   for (b_i = 0; b_i < pEnd; b_i++) {
-    b_tpaMat[b_i] = tpaMat[static_cast<int>(b_dpmap[b_i]) - 1];
+    b_tpaMat[b_i] = tpaMat[static_cast<int>(r[b_i]) - 1];
   }
 
   tpaMat.set_size(b_tpaMat.size(0));
@@ -261,7 +260,6 @@ void covert_search_dp(double trials, const double dpmap[5760000], const double
   //  Run simulation loop
   b_i = static_cast<int>(trials);
   for (k = 0; k < b_i; k++) {
-    std::cout << k << "\n";
     int tpa;
     int xt;
     int yt;
@@ -291,20 +289,15 @@ void covert_search_dp(double trials, const double dpmap[5760000], const double
     //  sneaky way to increase the matrix with blocks -- Kronecker product
     tpa = tpaMat[k];
     if (tpaMat[k] != 0) {
-      int b_i2;
-      int i3;
-      int i4;
-      int i5;
-
       //  if target present add target responses
       xt = vk[k];
       yt = static_cast<int>(b_k[k]);
       if (b_k[k] - 67.0 > b_k[k] + 67.0) {
         i1 = 0;
-        b_i2 = 0;
+        kEnd = 0;
       } else {
         i1 = static_cast<int>(b_k[k] - 67.0) - 1;
-        b_i2 = static_cast<int>(b_k[k] + 67.0);
+        kEnd = static_cast<int>(b_k[k] + 67.0);
       }
 
       if (vk[k] - 67 > vk[k] + 67) {
@@ -331,55 +324,48 @@ void covert_search_dp(double trials, const double dpmap[5760000], const double
         qEnd = vk[k] + 66;
       }
 
+      pEnd = q - i;
+      j = qEnd - i2;
+      b_fileid.set_size(pEnd, (j + 1));
+      for (q = 0; q <= j; q++) {
+        for (qEnd = 0; qEnd < pEnd; qEnd++) {
+          b_fileid[qEnd + 135 * q] = dpmap[(i + qEnd) + 2400 * (i2 + q)];
+        }
+      }
+
+      r.set_size(135, 135);
+      for (i = 0; i < 18225; i++) {
+        r[i] = std::abs(b_fileid[i]);
+      }
+
       if (b_k[k] - 67.0 > b_k[k] + 67.0) {
-        i3 = 0;
-        kEnd = 0;
+        i = 1;
       } else {
-        i3 = static_cast<int>(b_k[k] - 67.0) - 1;
-        kEnd = static_cast<int>(b_k[k] + 67.0);
+        i = static_cast<int>(b_k[k] - 67.0);
       }
 
       if (vk[k] - 67 > vk[k] + 67) {
-        i4 = -67;
-        i5 = -67;
+        q = 68;
       } else {
-        i4 = vk[k] - 135;
-        i5 = vk[k];
+        q = vk[k];
       }
 
-      pEnd = q - i;
-      j = qEnd - i2;
-      b_dpmap.set_size(pEnd, (j + 1));
-      for (q = 0; q <= j; q++) {
-        for (qEnd = 0; qEnd < pEnd; qEnd++) {
-          b_dpmap[qEnd + b_dpmap.size(0) * q] = dpmap[(i + qEnd) + 2400 * (i2 +
-            q)];
-        }
-      }
-
-      for (i = 0; i < 18225; i++) {
-        y[i] = std::abs(b_dpmap[i]);
-      }
-
-      pEnd = b_i2 - i1;
+      pEnd = kEnd - i1;
       j = n - p;
-      b_dpmap.set_size(pEnd, (j + 1));
-      for (b_i2 = 0; b_i2 <= j; b_i2++) {
+      b_fileid.set_size(pEnd, (j + 1));
+      for (kEnd = 0; kEnd <= j; kEnd++) {
         for (n = 0; n < pEnd; n++) {
-          b_dpmap[n + b_dpmap.size(0) * b_i2] = lnepriorh[(i1 + n) + 2400 * (p +
-            b_i2)];
+          b_fileid[n + b_fileid.size(0) * kEnd] = lnepriorh[(i1 + n) + 2400 * (p
+            + kEnd)] + r[n + 135 * kEnd];
         }
       }
 
-      for (i1 = 0; i1 < 18225; i1++) {
-        y[i1] += b_dpmap[i1];
-      }
-
-      i2 = kEnd - i3;
-      i = i5 - i4;
-      for (i1 = 0; i1 < i; i1++) {
-        for (b_i2 = 0; b_i2 < i2; b_i2++) {
-          lnepriorh[(i3 + b_i2) + 2400 * ((i4 + i1) + 67)] = y[b_i2 + i2 * i1];
+      pEnd = b_fileid.size(1);
+      for (i1 = 0; i1 < pEnd; i1++) {
+        j = b_fileid.size(0);
+        for (kEnd = 0; kEnd < j; kEnd++) {
+          lnepriorh[((i + kEnd) + 2400 * ((q + i1) - 68)) - 1] = b_fileid[kEnd +
+            b_fileid.size(0) * i1];
         }
       }
 
@@ -398,63 +384,43 @@ void covert_search_dp(double trials, const double dpmap[5760000], const double
     }
 
     x_tmp = coder::internal::maximum(lnepriorh);
-    i = 0;
-    iwork.set_size(5760000);
-    jj.set_size(5760000);
-    j = 1;
+    j = 0;
+    i2 = 1;
+    p = 1;
+    i = 1;
     pEnd = 1;
     exitg1 = false;
     while ((!exitg1) && (pEnd <= 2400)) {
-      boolean_T guard1 = false;
-      guard1 = false;
-      if (lnepriorh[(j + 2400 * (pEnd - 1)) - 1] == x_tmp) {
-        i++;
-        iwork[i - 1] = j;
-        jj[i - 1] = static_cast<short>(pEnd);
-        if (i >= 5760000) {
-          exitg1 = true;
-        } else {
-          guard1 = true;
-        }
+      if (lnepriorh[(i + 2400 * (pEnd - 1)) - 1] == x_tmp) {
+        j = 1;
+        ii_data[0] = i;
+        jj_data[0] = static_cast<short>(pEnd);
+        exitg1 = true;
       } else {
-        guard1 = true;
-      }
-
-      if (guard1) {
-        j++;
-        if (j > 2400) {
-          j = 1;
+        i++;
+        if (i > 2400) {
+          i = 1;
           pEnd++;
         }
       }
     }
 
-    if (1 > i) {
-      i1 = 0;
-    } else {
-      i1 = i;
+    if (j == 0) {
+      i2 = 0;
+      p = 0;
     }
-
-    iwork.set_size(i1);
-    if (1 > i) {
-      i = 0;
-    }
-
-    jj.set_size(i);
 
     //  since we use the max rule, find the max.
     //  record data
     results[k] = yt;
     results[k + results.size(0)] = xt;
     results[k + results.size(0) * 2] = tpa;
-    pEnd = iwork.size(0);
-    for (i1 = 0; i1 < pEnd; i1++) {
-      results[k + results.size(0) * 3] = iwork[i1];
+    for (i1 = 0; i1 < i2; i1++) {
+      results[k + results.size(0) * 3] = ii_data[0];
     }
 
-    pEnd = jj.size(0);
-    for (i1 = 0; i1 < pEnd; i1++) {
-      results[k + results.size(0) * 4] = jj[i1];
+    for (i1 = 0; i1 < p; i1++) {
+      results[k + results.size(0) * 4] = jj_data[0];
     }
 
     results[k + results.size(0) * 5] = -1.0;

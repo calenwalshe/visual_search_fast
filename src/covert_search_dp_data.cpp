@@ -15,6 +15,7 @@
 
 // Variable Definitions
 unsigned int state[625];
+FILE * eml_openfiles[20];
 boolean_T isInitialized_covert_search_dp = false;
 
 // End of code generation (covert_search_dp_data.cpp)

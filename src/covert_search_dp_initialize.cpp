@@ -13,6 +13,7 @@
 #include "covert_search_dp_initialize.h"
 #include "covert_search_dp_data.h"
 #include "eml_rand_mt19937ar_stateful.h"
+#include "fileManager.h"
 #include "rt_nonfinite.h"
 #include "timeKeeper.h"
 
@@ -21,6 +22,7 @@ void covert_search_dp_initialize()
 {
   savedTime_not_empty_init();
   eml_rand_mt19937ar_stateful_init();
+  filedata_init();
   isInitialized_covert_search_dp = true;
 }
 

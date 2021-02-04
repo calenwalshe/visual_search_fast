@@ -66,6 +66,8 @@ static double argInit_real_T()
 
 static void main_covert_search_dp()
 {
+  double trials = 1.0;
+  double seed = 1.0;
   static double dpmap_tmp[5760000];
   coder::array<double, 2U> results;
   double trials_tmp;

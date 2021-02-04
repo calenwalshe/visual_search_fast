@@ -5,27 +5,24 @@
 
 using namespace Rcpp;
 
-// covert_search_dp
-int covert_search_dp(double trials, NumericVector dpmapR, NumericVector priorhR, double seed);
-RcppExport SEXP _testcpp_covert_search_dp(SEXP trialsSEXP, SEXP dpmapRSEXP, SEXP priorhRSEXP, SEXP seedSEXP) {
+// timesTwo
+NumericVector timesTwo(NumericVector x);
+RcppExport SEXP _visualsearch_timesTwo(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< double >::type trials(trialsSEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type dpmapR(dpmapRSEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type priorhR(priorhRSEXP);
-    Rcpp::traits::input_parameter< double >::type seed(seedSEXP);
-    rcpp_result_gen = Rcpp::wrap(covert_search_dp(trials, dpmapR, priorhR, seed));
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(timesTwo(x));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_testcpp_covert_search_dp", (DL_FUNC) &_testcpp_covert_search_dp, 4},
+    {"_visualsearch_timesTwo", (DL_FUNC) &_visualsearch_timesTwo, 1},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_testcpp(DllInfo *dll) {
+RcppExport void R_init_visualsearch(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }

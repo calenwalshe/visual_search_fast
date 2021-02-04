@@ -1,3 +1,3 @@
-useDynLib(testcpp, .registration=TRUE)
+useDynLib(visualsearch, .registration=TRUE)
 importFrom(Rcpp, evalCpp)
 exportPattern("^[[:alpha:]]+")

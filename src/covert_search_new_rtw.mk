@@ -1,9 +1,9 @@
 ###########################################################################
-## Makefile generated for component 'covert_search_dp'. 
+## Makefile generated for component 'covert_search_new'. 
 ## 
-## Makefile     : covert_search_dp_rtw.mk
-## Generated on : Thu Feb 04 12:11:24 2021
-## Final product: ./covert_search_dp.a
+## Makefile     : covert_search_new_rtw.mk
+## Generated on : Thu Feb 04 12:09:18 2021
+## Final product: ./covert_search_new.a
 ## Product type : static-library
 ## 
 ###########################################################################
@@ -17,8 +17,8 @@
 # MAKEFILE                Name of this makefile
 # MODELLIB                Static library target
 
-PRODUCT_NAME              = covert_search_dp
-MAKEFILE                  = covert_search_dp_rtw.mk
+PRODUCT_NAME              = covert_search_new
+MAKEFILE                  = covert_search_new_rtw.mk
 MATLAB_ROOT               = /Applications/MATLAB_R2020b.app
 MATLAB_BIN                = /Applications/MATLAB_R2020b.app/bin
 MATLAB_ARCH_BIN           = $(MATLAB_BIN)/maci64
@@ -30,7 +30,7 @@ MODEL_HAS_DYNAMICALLY_LOADED_SFCNS =
 RELATIVE_PATH_TO_ANCHOR   = .
 C_STANDARD_OPTS           = -fno-common -fexceptions
 CPP_STANDARD_OPTS         = -std=c++11 -fno-common -fexceptions
-MODELLIB                  = covert_search_dp.a
+MODELLIB                  = covert_search_new.a
 
 ###########################################################################
 ## TOOLCHAIN SPECIFICATIONS
@@ -145,7 +145,7 @@ SHAREDLIB_LDFLAGS    = -dynamiclib -install_name @rpath/$(notdir $(PRODUCT)) -is
 ## OUTPUT INFO
 ###########################################################################
 
-PRODUCT = ./covert_search_dp.a
+PRODUCT = ./covert_search_new.a
 PRODUCT_TYPE = "static-library"
 BUILD_TYPE = "Static Library"
 
@@ -162,7 +162,7 @@ INCLUDES = $(INCLUDES_BUILDINFO)
 ###########################################################################
 
 DEFINES_CUSTOM = 
-DEFINES_STANDARD = -DMODEL=covert_search_dp
+DEFINES_STANDARD = -DMODEL=covert_search_new
 
 DEFINES = $(DEFINES_CUSTOM) $(DEFINES_STANDARD)
 
@@ -170,7 +170,7 @@ DEFINES = $(DEFINES_CUSTOM) $(DEFINES_STANDARD)
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/covert_search_dp_data.cpp $(START_DIR)/rt_nonfinite.cpp $(START_DIR)/rtGetNaN.cpp $(START_DIR)/rtGetInf.cpp $(START_DIR)/covert_search_dp_initialize.cpp $(START_DIR)/covert_search_dp_terminate.cpp $(START_DIR)/covert_search_dp.cpp $(START_DIR)/tic.cpp $(START_DIR)/timeKeeper.cpp $(START_DIR)/rand.cpp $(START_DIR)/randsample.cpp $(START_DIR)/histc.cpp $(START_DIR)/randn.cpp $(START_DIR)/minOrMax.cpp $(START_DIR)/toc.cpp $(START_DIR)/eml_rand_mt19937ar_stateful.cpp $(START_DIR)/eml_rand_mt19937ar.cpp
+SRCS = $(START_DIR)/covert_search_new_data.cpp $(START_DIR)/covert_search_new_initialize.cpp $(START_DIR)/covert_search_new_terminate.cpp $(START_DIR)/covert_search_new.cpp $(START_DIR)/randsample.cpp $(START_DIR)/rand.cpp $(START_DIR)/histc.cpp $(START_DIR)/eml_rand_mt19937ar_stateful.cpp
 
 ALL_SRCS = $(SRCS)
 
@@ -178,7 +178,7 @@ ALL_SRCS = $(SRCS)
 ## OBJECTS
 ###########################################################################
 
-OBJS = covert_search_dp_data.o rt_nonfinite.o rtGetNaN.o rtGetInf.o covert_search_dp_initialize.o covert_search_dp_terminate.o covert_search_dp.o tic.o timeKeeper.o rand.o randsample.o histc.o randn.o minOrMax.o toc.o eml_rand_mt19937ar_stateful.o eml_rand_mt19937ar.o
+OBJS = covert_search_new_data.o covert_search_new_initialize.o covert_search_new_terminate.o covert_search_new.o randsample.o rand.o histc.o eml_rand_mt19937ar_stateful.o
 
 ALL_OBJS = $(OBJS)
 
@@ -301,43 +301,19 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS)
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-covert_search_dp_data.o : $(START_DIR)/covert_search_dp_data.cpp
+covert_search_new_data.o : $(START_DIR)/covert_search_new_data.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-rt_nonfinite.o : $(START_DIR)/rt_nonfinite.cpp
+covert_search_new_initialize.o : $(START_DIR)/covert_search_new_initialize.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-rtGetNaN.o : $(START_DIR)/rtGetNaN.cpp
+covert_search_new_terminate.o : $(START_DIR)/covert_search_new_terminate.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-rtGetInf.o : $(START_DIR)/rtGetInf.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" "$<"
-
-
-covert_search_dp_initialize.o : $(START_DIR)/covert_search_dp_initialize.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" "$<"
-
-
-covert_search_dp_terminate.o : $(START_DIR)/covert_search_dp_terminate.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" "$<"
-
-
-covert_search_dp.o : $(START_DIR)/covert_search_dp.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" "$<"
-
-
-tic.o : $(START_DIR)/tic.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" "$<"
-
-
-timeKeeper.o : $(START_DIR)/timeKeeper.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" "$<"
-
-
-rand.o : $(START_DIR)/rand.cpp
+covert_search_new.o : $(START_DIR)/covert_search_new.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
@@ -345,27 +321,15 @@ randsample.o : $(START_DIR)/randsample.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
+rand.o : $(START_DIR)/rand.cpp
+	$(CPP) $(CPPFLAGS) -o "$@" "$<"
+
+
 histc.o : $(START_DIR)/histc.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-randn.o : $(START_DIR)/randn.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" "$<"
-
-
-minOrMax.o : $(START_DIR)/minOrMax.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" "$<"
-
-
-toc.o : $(START_DIR)/toc.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" "$<"
-
-
 eml_rand_mt19937ar_stateful.o : $(START_DIR)/eml_rand_mt19937ar_stateful.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" "$<"
-
-
-eml_rand_mt19937ar.o : $(START_DIR)/eml_rand_mt19937ar.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 

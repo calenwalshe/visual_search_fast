@@ -20,7 +20,8 @@
 
 // Function Declarations
 extern void covert_search_dp(double trials, const double dpmap[5760000], const
-  double priorh[5760000], double seed, coder::array<double, 2U> &results);
+  double priorh[5760000], const double rtmp[18225], double seed, coder::array<
+  double, 2U> &results);
 
 #endif
 

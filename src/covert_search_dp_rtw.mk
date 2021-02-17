@@ -2,7 +2,7 @@
 ## Makefile generated for component 'covert_search_dp'. 
 ## 
 ## Makefile     : covert_search_dp_rtw.mk
-## Generated on : Thu Feb 04 17:46:13 2021
+## Generated on : Wed Feb 17 12:29:18 2021
 ## Final product: ./covert_search_dp.a
 ## Product type : static-library
 ## 
@@ -22,7 +22,7 @@ MAKEFILE                  = covert_search_dp_rtw.mk
 MATLAB_ROOT               = /Applications/MATLAB_R2020b.app
 MATLAB_BIN                = /Applications/MATLAB_R2020b.app/bin
 MATLAB_ARCH_BIN           = $(MATLAB_BIN)/maci64
-START_DIR                 = /Users/calenwalshe/Desktop/simple_search
+START_DIR                 = /Users/calenwalshe/Dropbox/Calen/Work/search/modeling/FI_search_nogpu/codegen/lib/covert_search_dp
 TGT_FCN_LIB               = ISO_C++
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0
@@ -153,7 +153,7 @@ BUILD_TYPE = "Static Library"
 ## INCLUDE PATHS
 ###########################################################################
 
-INCLUDES_BUILDINFO = -I$(START_DIR) -I/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c -I$(MATLAB_ROOT)/extern/include
+INCLUDES_BUILDINFO = -I$(START_DIR) -I/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/FI_search_nogpu -I$(MATLAB_ROOT)/extern/include
 
 INCLUDES = $(INCLUDES_BUILDINFO)
 
@@ -170,7 +170,7 @@ DEFINES = $(DEFINES_CUSTOM) $(DEFINES_STANDARD)
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/covert_search_dp_data.cpp $(START_DIR)/rt_nonfinite.cpp $(START_DIR)/rtGetNaN.cpp $(START_DIR)/rtGetInf.cpp $(START_DIR)/covert_search_dp_initialize.cpp $(START_DIR)/covert_search_dp_terminate.cpp $(START_DIR)/covert_search_dp.cpp $(START_DIR)/tic.cpp $(START_DIR)/timeKeeper.cpp $(START_DIR)/fileManager.cpp $(START_DIR)/fread.cpp $(START_DIR)/rand.cpp $(START_DIR)/randsample.cpp $(START_DIR)/histc.cpp $(START_DIR)/randn.cpp $(START_DIR)/minOrMax.cpp $(START_DIR)/toc.cpp $(START_DIR)/eml_rand_mt19937ar_stateful.cpp $(START_DIR)/eml_rand_mt19937ar.cpp
+SRCS = $(START_DIR)/covert_search_dp_data.cpp $(START_DIR)/rt_nonfinite.cpp $(START_DIR)/rtGetNaN.cpp $(START_DIR)/rtGetInf.cpp $(START_DIR)/covert_search_dp_initialize.cpp $(START_DIR)/covert_search_dp_terminate.cpp $(START_DIR)/covert_search_dp.cpp $(START_DIR)/tic.cpp $(START_DIR)/timeKeeper.cpp $(START_DIR)/rand.cpp $(START_DIR)/randsample.cpp $(START_DIR)/histc.cpp $(START_DIR)/randn.cpp $(START_DIR)/minOrMax.cpp $(START_DIR)/toc.cpp $(START_DIR)/eml_rand_mt19937ar_stateful.cpp $(START_DIR)/eml_rand_mt19937ar.cpp
 
 ALL_SRCS = $(SRCS)
 
@@ -178,7 +178,7 @@ ALL_SRCS = $(SRCS)
 ## OBJECTS
 ###########################################################################
 
-OBJS = covert_search_dp_data.o rt_nonfinite.o rtGetNaN.o rtGetInf.o covert_search_dp_initialize.o covert_search_dp_terminate.o covert_search_dp.o tic.o timeKeeper.o fileManager.o fread.o rand.o randsample.o histc.o randn.o minOrMax.o toc.o eml_rand_mt19937ar_stateful.o eml_rand_mt19937ar.o
+OBJS = covert_search_dp_data.o rt_nonfinite.o rtGetNaN.o rtGetInf.o covert_search_dp_initialize.o covert_search_dp_terminate.o covert_search_dp.o tic.o timeKeeper.o rand.o randsample.o histc.o randn.o minOrMax.o toc.o eml_rand_mt19937ar_stateful.o eml_rand_mt19937ar.o
 
 ALL_OBJS = $(OBJS)
 
@@ -293,11 +293,11 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS)
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-%.o : /Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/%.c
+%.o : /Users/calenwalshe/Dropbox/Calen/Work/search/modeling/FI_search_nogpu/%.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-%.o : /Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/%.cpp
+%.o : /Users/calenwalshe/Dropbox/Calen/Work/search/modeling/FI_search_nogpu/%.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
@@ -334,14 +334,6 @@ tic.o : $(START_DIR)/tic.cpp
 
 
 timeKeeper.o : $(START_DIR)/timeKeeper.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" "$<"
-
-
-fileManager.o : $(START_DIR)/fileManager.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" "$<"
-
-
-fread.o : $(START_DIR)/fread.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 

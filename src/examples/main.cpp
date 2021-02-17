@@ -42,11 +42,24 @@
 #include "coder_array.h"
 
 // Function Declarations
+static void argInit_135x135_real_T(double result[18225]);
 static void argInit_2400x2400_real_T(double result[5760000]);
 static double argInit_real_T();
 static void main_covert_search_dp();
 
 // Function Definitions
+static void argInit_135x135_real_T(double result[18225])
+{
+  // Loop over the array to initialize each element.
+  for (int idx0 = 0; idx0 < 135; idx0++) {
+    for (int idx1 = 0; idx1 < 135; idx1++) {
+      // Set the value of the array element.
+      // Change this value to the value that the application requires.
+      result[idx0 + 135 * idx1] = argInit_real_T();
+    }
+  }
+}
+
 static void argInit_2400x2400_real_T(double result[5760000])
 {
   // Loop over the array to initialize each element.
@@ -67,6 +80,7 @@ static double argInit_real_T()
 static void main_covert_search_dp()
 {
   static double dpmap_tmp[5760000];
+  static double dv[18225];
   coder::array<double, 2U> results;
   double trials_tmp;
 
@@ -77,8 +91,10 @@ static void main_covert_search_dp()
   argInit_2400x2400_real_T(dpmap_tmp);
 
   // Initialize function input argument 'priorh'.
+  // Initialize function input argument 'rtmp'.
   // Call the entry-point 'covert_search_dp'.
-  covert_search_dp(trials_tmp, dpmap_tmp, dpmap_tmp, trials_tmp, results);
+  argInit_135x135_real_T(dv);
+  covert_search_dp(trials_tmp, dpmap_tmp, dpmap_tmp, dv, trials_tmp, results);
 }
 
 int main(int, const char * const [])

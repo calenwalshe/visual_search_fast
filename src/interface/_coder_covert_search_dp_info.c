@@ -42,16 +42,16 @@ mxArray *emlrtMexFcnProperties(void)
     "EntryPoints", "CoverageInfo" };
 
   xEntryPoints = emlrtCreateStructMatrix(1, 1, 6, epFieldName);
-  xInputs = emlrtCreateLogicalMatrix(1, 4);
+  xInputs = emlrtCreateLogicalMatrix(1, 5);
   emlrtSetField(xEntryPoints, 0, "Name", emlrtMxCreateString("covert_search_dp"));
-  emlrtSetField(xEntryPoints, 0, "NumberOfInputs", emlrtMxCreateDoubleScalar(4.0));
+  emlrtSetField(xEntryPoints, 0, "NumberOfInputs", emlrtMxCreateDoubleScalar(5.0));
   emlrtSetField(xEntryPoints, 0, "NumberOfOutputs", emlrtMxCreateDoubleScalar
                 (1.0));
   emlrtSetField(xEntryPoints, 0, "ConstantInputs", xInputs);
   emlrtSetField(xEntryPoints, 0, "FullPath", emlrtMxCreateString(
-    "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/visual_search_c/covert_search_dp.m"));
+    "/Users/calenwalshe/Dropbox/Calen/Work/search/modeling/FI_search_nogpu/covert_search_dp.m"));
   emlrtSetField(xEntryPoints, 0, "TimeStamp", emlrtMxCreateDoubleScalar
-                (738191.7338541667));
+                (738204.5200462963));
   xResult = emlrtCreateStructMatrix(1, 1, 4, propFieldName);
   emlrtSetField(xResult, 0, "Version", emlrtMxCreateString(
     "9.9.0.1467703 (R2020b)"));

@@ -15,7 +15,7 @@
 
 /* Function Definitions */
 void covert_search_dp_mexFunction(int32_T nlhs, mxArray *plhs[1], int32_T nrhs,
-  const mxArray *prhs[4])
+  const mxArray *prhs[5])
 {
   emlrtStack st = { NULL,              /* site */
     NULL,                              /* tls */
@@ -26,8 +26,8 @@ void covert_search_dp_mexFunction(int32_T nlhs, mxArray *plhs[1], int32_T nrhs,
   st.tls = emlrtRootTLSGlobal;
 
   /* Check for proper number of arguments. */
-  if (nrhs != 4) {
-    emlrtErrMsgIdAndTxt(&st, "EMLRT:runTime:WrongNumberOfInputs", 5, 12, 4, 4,
+  if (nrhs != 5) {
+    emlrtErrMsgIdAndTxt(&st, "EMLRT:runTime:WrongNumberOfInputs", 5, 12, 5, 4,
                         16, "covert_search_dp");
   }
 

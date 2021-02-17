@@ -24,7 +24,7 @@ extern "C" {
 
   /* Function Declarations */
   void covert_search_dp_mexFunction(int32_T nlhs, mxArray *plhs[1], int32_T nrhs,
-    const mxArray *prhs[4]);
+    const mxArray *prhs[5]);
   MEXFUNCTION_LINKAGE void mexFunction(int32_T nlhs, mxArray *plhs[], int32_T
     nrhs, const mxArray *prhs[]);
   emlrtCTX mexFunctionCreateRootTLS(void);
